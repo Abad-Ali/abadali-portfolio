@@ -11,7 +11,7 @@ export const metadata = {
     description: "Explore Abad Ali’s projects demonstrating full-stack web development skills with React, Next.js, Node.js, and MERN stack.",
     url: "https://abadali.vercel.app/projects",
     siteName: "Abad Ali Portfolio",
-    images: [{ url: "/opengraph-projects.jpg", width: 1200, height: 630, alt: "Projects page screenshot" }],
+    images: [{ url: "/opengraph-projects.png", width: 1200, height: 630, alt: "Projects page screenshot" }],
     locale: "en",
     type: "website",
   },

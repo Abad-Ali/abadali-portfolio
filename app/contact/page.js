@@ -11,7 +11,7 @@ export const metadata = {
     description: "Reach out to Abad Ali to discuss projects, internships, or collaborations.",
     url: "https://abadali.vercel.app/contact",
     siteName: "Abad Ali Portfolio",
-    images: [{ url: "/opengraph-contact.jpg", width: 1200, height: 630, alt: "Contact page screenshot" }],
+    images: [{ url: "/opengraph-contact.png", width: 1200, height: 630, alt: "Contact page screenshot" }],
     locale: "en",
     type: "website",
   },
