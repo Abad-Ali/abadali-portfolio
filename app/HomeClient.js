@@ -100,7 +100,7 @@ const body = encodeURIComponent(
         </div>
       </section>
       <motion.a
-        href={`mailto:abadali7170@gmail.com?subject=${subject}&body=${body}`}
+        href={`mailto:abadali1707@gmail.com?subject=${subject}&body=${body}`}
         whileHover={{ scale: 1.15, rotate: 5 }}
         whileTap={{ scale: 0.95 }}
         className="fixed bottom-5 right-5 z-20 p-3 rounded-full bg-gradient-to-r from-purple-700/90 to-pink-600/90 border-2">

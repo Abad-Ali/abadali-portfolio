@@ -15,7 +15,7 @@ const Footer = () => {
               <a href='https://www.linkedin.com/in/abad-ali-0649103a2' target="_blank" className="transition-transform duration-300 hover:scale-150 hover:rotate-12 hover:text-blue-700 hover:animate-bounce"><Linkedin className='w-6 h-6'/></a>
               <a href='https://www.instagram.com/abadali_17' target="_blank" className="transition-transform duration-300 hover:scale-150 hover:rotate-12 hover:text-pink-500 hover:animate-bounce"><InstagramIcon className='w-6 h-6'/></a>
               <a href='https://github.com/Abad-Ali'  target="_blank" className="transition-transform duration-300 hover:scale-150 hover:text-slate-50 hover:rotate-12 hover:animate-bounce"><GithubIcon className='w-6 h-6'/></a>
-              <a href='mailto:abadali7170@gmail.com'  className="transition-transform duration-300 hover:scale-150 hover:text-red-600 hover:rotate-12 hover:animate-bounce"><MailIcon className='w-6 h-6'/></a>
+              <a href='mailto:abadali1707@gmail.com'  className="transition-transform duration-300 hover:scale-150 hover:text-red-600 hover:rotate-12 hover:animate-bounce"><MailIcon className='w-6 h-6'/></a>
               {/* href="https://mail.google.com/mail/?view=cm&fs=1&to=afghfh@gmail.com" */}
            </div>
         </div>
