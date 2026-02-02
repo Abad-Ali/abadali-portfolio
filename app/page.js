@@ -12,8 +12,18 @@ export const metadata = {
     url: "https://abadali.vercel.app",
     siteName: "Abad Ali Portfolio",
     images: [{ url: "/opengraph-home.jpg", width: 1200, height: 630, alt: "Portfolio screenshot" }],
-    locale: "en_IN",
+    locale: "en",
     type: "website",
+  },
+  robots: {
+    index: true,              // allow search engines to index the page
+    follow: true,             // allow search engines to follow links
+    nocache: false,           // allow search engines to cache the page
+    noimageindex: false,      // allow images to be indexed
+    nosnippet: false,         // allow search engines to show snippets in search results
+    maxSnippet: -1,           // no limit on snippet length
+    maxImagePreview: "large", // show large image previews in search results
+    maxVideoPreview: -1,      // no limit on video previews
   },
 };
 
