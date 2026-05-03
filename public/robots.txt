@@ -1,0 +1,13 @@
+# robots.txt for abadali.vercel.app
+
+User-agent: *
+Allow: /
+
+# Block unnecessary or private folders (safe defaults)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://abadali.vercel.app/sitemap.xml
