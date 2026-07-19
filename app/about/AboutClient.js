@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { FolderCode, GithubIcon } from 'lucide-react'
+import { ArrowRight, Code2, FileText, FolderCode, GithubIcon } from 'lucide-react'
 import SkillsCarousel from '@/components/SkillsCarousel'
 import Typewriter from 'typewriter-effect';
 import Link from 'next/link'
@@ -25,13 +25,38 @@ const About = () => {
                     <div className='flex justify-between items-center'>
                       <h1 className='font-black text-3xl bg-gradient-to-r from-purple-700 to-pink-600 bg-clip-text text-transparent'>Abad Ali</h1>
                       <div>
-                        <Link href="/resume.pdf" target="_blank"><button className='bg-gradient-to-r from-purple-700 to-pink-600 text-white px-4 py-2 rounded-lg text-lg md:text-xl font-bold duration-300 hover:cursor-pointer hover:scale-110'>Resume</button></Link>
+                        <Link href="/resume.pdf" target="_blank" className="group relative flex items-center gap-2 px-4 py-2.5 rounded-xl overflow-hidden backdrop-blur-xl bg-gradient-to-r from-purple-700 to-pink-600 border border-gray-300 shadow-lg cursor-pointer hover:scale-105 transition-all duration-300">
+                          <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                          <div className="relative z-10 flex items-center gap-2">
+                            <div className="p-1.5 rounded-lg bg-white/20 transition-all duration-300">
+                              <FileText size={16} className="group-hover:rotate-12 transition-transform duration-300"/>
+                            </div>
+                            <div>
+                              <p className="font-bold text-sm">
+                                Resume
+                              </p>
+                              <p className="text-[10px] opacity-70">
+                                Experience & Skills
+                              </p>
+                            </div>
+                          </div>
+                        </Link>
                       </div>
                     </div>
                     <h2 className='font-extrabold text-[22px] md:text-2xl bg-gradient-to-r from-purple-700 to-pink-600 bg-clip-text text-transparent'>
                       <Typewriter
                         options={{
-                          strings: ['Frontend Developer', 'Backend Developer', 'Full Stack Web Developer'],
+                          strings: [
+                            "Full-Stack Developer",
+                            "AI-Powered App Developer",
+                            "Next.js Developer",
+                            "MERN Stack Developer",
+                            "Backend & API Developer",
+                            "Real-Time Application Developer",
+                            "React.js Developer",
+                            "Software Engineer",
+                            "Problem Solver"
+                          ],
                           autoStart: true,
                           loop: true,
                           pauseFor: 700,
@@ -42,7 +67,7 @@ const About = () => {
                     </h2>
     
                     <p className="max-w-lg md:text-[17px]">
-                      Hi, I’m a final-year BCA student and a passionate web developer. I specialize in building full-stack web applications using <span className="font-semibold">React.js</span>, <span  className="font-semibold">Next.js</span>, <span className="font-semibold">Node.js</span>, <span className="font-semibold"> Express.js</span> and <span className="font-semibold">MongoDB</span>. I love creating responsive and interactive websites that solve real-world problems.
+                      I’m a Full-Stack Developer focused on building intelligent digital experiences. I specialize in Next.js, MERN stack, and AI-powered applications, creating scalable solutions that combine modern interfaces with robust backend systems.
                     </p>
                   </div>
                 </div>
@@ -75,9 +100,17 @@ const About = () => {
               </Link>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeInOut" }} className='flex flex-col md:flex-row justify-center gap-1 md:gap-7 mt-10 bg-green-600/10 px-3 py-3 rounded-lg border-[1] border-gray-200 m-1 hover:scale-95 duration-300'>
-              <span className='font-extrabold font-sans text-xl md:text-2xl text-green-700 my-auto'>Career Goals</span>
-              <p className='max-w-lg font-semibold text-sm text-[16px] font-sans'>I am eager to work on challenging projects and continue learning new technologies. I am a team player, passionate about clean code, and enjoy creating engaging user experiences.</p>
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeInOut" }} viewport={{ once: true }} className="flex flex-col md:flex-row items-center justify-between gap-6 mt-10 bg-black/5 backdrop-blur-lg px-6 py-7 rounded-3xl border border-gray-200/40 shadow-xl m-2 hover:-translate-y-1 transition-all duration-300">
+              <div className="flex flex-col gap-2">
+                <h3 className="font-black text-2xl">
+                  Career Goals
+                </h3>
+                <div className="w-14 h-1 bg-green-600 rounded-full"/>
+              </div>
+            
+              <p className="max-w-2xl font-semibold leading-relaxed text-sm md:text-base">
+                I strive to grow as a software engineer by building meaningful projects, learning new technologies, and creating clean, efficient solutions with great user experiences.
+              </p>
             </motion.div>
         </div>
       </section>
@@ -97,30 +130,85 @@ const About = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: "easeInOut" }}><EducationSection/></motion.div>
         </section>
 
-        <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: "easeInOut" }} className="text-center mt-[5vh] m-1">
-          <h2 className="font-black font-sans text-2xl mb-2">What’s Next</h2>
-          <p className="max-w-xl mx-auto text-gray-600 font-semibold">
-            I’m currently focused on improving my React and Node.js skills while exploring Next.js 
-            and building real-world projects that challenge my creativity and logic.
-          </p>
-        
-          <p className="mt-6 text-gray-600">
-            When I’m not coding, you’ll find me exploring new design ideas or learning about emerging web technologies.
-          </p>
-        
-          <div className="mt-8">
-            <a href="/projects"className="text-purple-600 hover:underline font-semibold">
-              → Check out my latest projects
-            </a>
-          </div>
-        
-          <p className="my-7 text-slate-500 text-sm">
-            “Keep building. Keep learning.”
-          </p>
+       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: "easeInOut" }} viewport={{ once: true }} className="mt-14 px-4">        
+          <div className="max-w-5xl mx-auto">        
+            <div className="text-center mb-10">        
+              <h2 className="text-3xl font-black">
+                What's Next
+              </h2>        
+              <p className="mt-3 text-gray-600 font-semibold">
+                My journey of continuous growth, learning, and creating impactful solutions
+              </p>        
+            </div>        
+            <div className="grid md:grid-cols-2 gap-6">        
+              <div className="rounded-3xl p-6 bg-gradient-to-br from-purple-500/10 to-transparent backdrop-blur-xl border border-gray-200/40 shadow-xl hover:scale-105 duration-300">        
+                <h3 className="text-xl font-black">
+                  Currently Focused On
+                </h3>        
+                <p className="mt-4 text-gray-600 leading-relaxed font-medium">
+                  I am currently improving my full-stack development skills by building
+                  modern applications with React, Next.js, and Node.js. My focus is on
+                  creating scalable solutions, improving performance, and developing
+                  clean, maintainable code while exploring advanced frontend and backend
+                  concepts.
+                </p>        
+                <div className="mt-6 flex flex-wrap gap-2">        
+                  <span className="px-3 py-1 rounded-full text-sm font-semibold bg-purple-600/10 text-purple-600">
+                    React Ecosystem
+                  </span>        
+                  <span className="px-3 py-1 rounded-full text-sm font-semibold bg-purple-600/10 text-purple-600">
+                    Full Stack Development
+                  </span>        
+                  <span className="px-3 py-1 rounded-full text-sm font-semibold bg-purple-600/10 text-purple-600">
+                    Modern UI Engineering
+                  </span>        
+                </div>        
+              </div>        
+              <div className="rounded-3xl p-6 bg-gradient-to-br from-blue-500/10 to-transparent backdrop-blur-xl border border-gray-200/40 shadow-xl hover:scale-105 duration-300">        
+                <h3 className="text-xl font-black">
+                  Future Goals
+                </h3>        
+                <p className="mt-4 text-gray-600 leading-relaxed font-medium">
+                  My goal is to grow as a software engineer by exploring advanced
+                  technologies, system design, and cloud-based solutions. I aim to
+                  contribute to meaningful projects and build reliable applications
+                  that solve real-world problems.
+                </p>        
+                <div className="mt-6 flex flex-wrap gap-2">        
+                  <span className="px-3 py-1 rounded-full text-sm font-semibold bg-blue-600/10 text-blue-600">
+                    Advanced Engineering
+                  </span>        
+                  <span className="px-3 py-1 rounded-full text-sm font-semibold bg-blue-600/10 text-blue-600">
+                    Cloud Technologies
+                  </span>        
+                  <span className="px-3 py-1 rounded-full text-sm font-semibold bg-blue-600/10 text-blue-600">
+                    Open Source
+                  </span>        
+                </div>        
+              </div>        
+            </div>        
+            <div className="my-8 text-center rounded-3xl p-6 bg-black/5 dark:bg-white/5 border border-gray-200/40">        
+              <p className="text-lg font-bold">
+                Always learning, building, and looking for opportunities to create better software experiences.
+              </p>        
+              <Link href="/projects" className="group relative inline-flex items-center gap-3 mt-3 px-6 py-3.5 rounded-2xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg cursor-pointer hover:scale-105 transition-all duration-300">
+                <div className="absolute inset-0 bg-black/20 translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                <div className="relative z-10 flex items-center gap-4">
+                  <div className="p-2 rounded-xl bg-white/20">
+                    <Code2 size={18} className="group-hover:rotate-12 transition-transform duration-300"/>
+                  </div>
+                  <div>
+                    <p className="font-bold">Explore Projects</p>
+                    <p className="text-xs opacity-80">See My Work</p>
+                  </div>
+                  <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300"/>
+                </div>
+              </Link>        
+            </div>        
+          </div>        
         </motion.section>
       </section>
     </>
   )
-}
-
+}     
 export default About

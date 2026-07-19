@@ -1,6 +1,6 @@
 'use client'
 import { Badge } from '@/components/ui/badge'
-import { ArrowDown, Eye, GithubIcon, LinkIcon } from 'lucide-react'
+import { ArrowDown, Code2, Eye, GithubIcon, LinkIcon, Mail } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -77,21 +77,82 @@ const Projects= () => {
                     </div>
                   </div>
 
-                  <div className='hidden lg:flex flex-col gap-3 backdrop-blur-lg bg-black/20 border-[1] border-gray-200 p-3 py-4 rounded-lg hover:scale-95 duration-300'>
-                    <div className='flex flex-col items-center'>
-                      <h2 className='text-purple-700 text-3xl font-black'>{project.name}</h2>
-                      <div className='max-w-[30vw] text-center'><span>{project.desc}</span></div>
-                      <Link href={`/projects/${project.id}`} className='font-bold text-blue-600 hover:to-blue-500 underline'>view more details</Link>
+                  <div className="w-full max-w-xl min-h-[350px] rounded-2xl p-5 bg-white/10 backdrop-blur-xl border border-black/10 shadow-xl shadow-black/5 lg:flex flex-col justify-between overflow-hidden transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20 hidden ">
+                    <div className="absolute -right-20 -top-20 w-48 h-48 bg-purple-600/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-700"/>
+                    <div className="relative z-10">
+                      <div className="flex justify-between items-start gap-3">
+                        <h2
+                          className="text-2xl md:text-3xl font-black bg-gradient-to-r from-purple-700 to-pink-600 bg-clip-text text-transparent truncate transition-all duration-300">
+                          {project.name}
+                        </h2>
+                        <span
+                          className="shrink-0 px-3 py-1 rounded-full text-xs font-bold bg-purple-600/10  text-purple-600  border border-purple-500/20 transition-all duration-300 group-hover:bg-purple-600/20">
+                          Featured
+                        </span>
+                      </div>
+                      <p
+                        className="mt-3 text-sm md:text-base line-clamp-7 transition-colors duration-300">
+                        {project.desc}
+                      </p>
                     </div>
-                    <div className="flex justify-center gap-5 font-semibold">
-                      <Link href={project.url} target="_blank" className="flex items-center gap-2 px-5 py-2 bg-purple-700 text-white rounded-lg cursor-pointer hover:scale-105 duration-300">
-                        <LinkIcon /> Live Demo
+                    <div
+                      className="relative z-10 flex flex-wrap justify-center items-center gap-3 border-t border-black/10 pt-4">
+                      <Link href={`/projects/${project.id}`} className="group relative flex items-center gap-2 px-4 py-3 rounded-xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg cursor-pointer">
+                        <div className="absolute inset-0 bg-black/20 translate-x-full hover:translate-x-0 duration-500"></div>
+                      
+                        <div className="relative z-10 flex items-center gap-2">
+                          <div className="p-1.5 rounded-lg bg-white/20 duration-300">
+                            <Code2 size={16} className="hover:rotate-12 duration-300" />
+                          </div>
+                      
+                          <div className="leading-tight">
+                            <p className="font-bold text-sm">View Details</p>
+                            <p className="text-[11px] opacity-80">Explore Project</p>
+                          </div>
+                      
+                          <span className="text-lg group-hover:translate-x-1.5 duration-300">
+                            →
+                          </span>
+                        </div>
                       </Link>
-            
-                      <Link href={project.github} target="_blank" className="flex items-center gap-2 px-5 py-2 border rounded-lg cursor-pointer hover:scale-105 duration-300 text-white">
-                        <GithubIcon /> GitHub
-                      </Link>
-                    </div>
+                      <div className="flex gap-3">
+                        <Link
+                          href={project.url}
+                          target="_blank"
+                          className="group relative flex items-center gap-3 px-5 py-3 rounded-2xl overflow-hidden backdrop-blur-xl bg-white/10 border border-gray-300 shadow-lg cursor-pointer">
+                          <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-pink-600 opacity-0 group-hover:opacity-100 duration-500"></div>                      
+
+                          <div className="relative z-10 flex items-center gap-3">
+                            <div className="p-2 rounded-xl bg-white/20 duration-300">
+                              <LinkIcon size={18} className="group-hover:rotate-12 duration-300" />
+                            </div>                      
+
+                            <div>
+                              <p className="font-bold">Demo</p>
+                              <p className="text-xs opacity-70">Live Preview</p>
+                            </div>
+                          </div>
+                        </Link>                      
+
+                        <Link
+                          href={project.github}
+                          target="_blank"
+                          className="group relative flex items-center gap-3 px-5 py-3 rounded-2xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg cursor-pointer">
+                          <div className="absolute inset-0 bg-black/20 translate-x-full group-hover:translate-x-0 duration-500"></div>                      
+
+                          <div className="relative z-10 flex items-center gap-3">
+                            <div className="p-2 rounded-xl bg-white/20 duration-300">
+                              <GithubIcon size={18} className="group-hover:rotate-12 duration-300" />
+                            </div>                      
+
+                            <div>
+                              <p className="font-bold">Code</p>
+                              <p className="text-xs opacity-80">GitHub Repo</p>
+                            </div>
+                          </div>
+                        </Link>
+                      </div>
+                     </div>
                   </div>
                 </motion.div>
               </SwiperSlide>
@@ -100,14 +161,56 @@ const Projects= () => {
         }
         </Swiper>
 
-        <div className='hidden lg:flex justify-center items-center'>
-          <Link href='#allProjects' className='bg-purple-700/90 px-2 py-1 rounded-lg fixed bottom-1 md:right-7 z-10 animate-bounce font-semibold cursor-pointer hover:bg-purple-700/70 flex gap-1.5'>View All<ArrowDown strokeWidth={2.5}/></Link>
+        <div className="hidden lg:flex justify-center items-center">
+          <Link href="#allProjects" className="group fixed bottom-0 md:right-5 z-10 flex items-center gap-3 px-5 py-3 rounded-2xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/30">
+            <div className="absolute inset-0 bg-black/20 translate-x-full transition-transform duration-500 group-hover:translate-x-0"/>
+            <div className="relative z-10 flex items-center gap-3">
+              <div className="p-2 rounded-xl bg-white/20 transition-all duration-300 group-hover:bg-white/30">
+                <ArrowDown size={18} strokeWidth={2.5} className="transition-transform duration-300 group-hover:translate-y-1"/>
+              </div>
+              <div className="leading-tight">
+                <p className="font-bold text-sm">View All Projects</p>
+                <p className="text-[11px] opacity-80">Explore My Work</p>
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
 
     <div id='allProjects' className='scroll-mt-28 md:mb-7'><AllProjects/></div>
-    <span className='bg-slate-950 text-[15px] md:text-[17px] font-semibold text-gray-400 flex justify-center items-center p-2'>"Thank you for visiting my work."</span>
+
+    <section className="relative py-16 px-5 border-t border-white/10 overflow-hidden">
+    
+      <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center">
+        <h2 className="text-3xl md:text-4xl font-black text-purple-600 dark:text-purple-400">Let's Work Together</h2>
+    
+        <p className="mt-4 max-w-2xl text-sm md:text-lg text-gray-600 font-semibold">
+          Thank you for exploring my portfolio. If you have an idea, project, or opportunity, feel free to reach out and let's create something meaningful.
+        </p>
+    
+        <Link href="/contact" className="group relative mt-8 flex items-center gap-3 px-5 py-3 rounded-2xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/30">
+          <div className="absolute inset-0 bg-black/20 translate-x-full transition-transform duration-500 group-hover:translate-x-0"/>
+    
+          <div className="relative z-10 flex items-center gap-3">
+            <div className="p-2 rounded-xl bg-white/20 transition-all duration-300 group-hover:bg-white/30">
+              <Mail size={18} className="transition-transform duration-300 group-hover:rotate-12"/>
+            </div>
+    
+            <div className="leading-tight text-left">
+              <p className="font-bold text-sm">Contact Me</p>
+              <p className="text-[11px] opacity-80">Start a Conversation</p>
+            </div>
+    
+            <span className="text-lg transition-transform duration-300 group-hover:translate-x-1.5">→</span>
+          </div>
+        </Link>
+    
+        <span className="mt-10 text-[15px] md:text-[17px] font-semibold text-gray-400">
+          Thank you for visiting my work.
+        </span>
+      </div>
+    </section>
     </>
   )
 }
