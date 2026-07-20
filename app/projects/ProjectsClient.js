@@ -16,7 +16,7 @@ import { projects } from "./projectsData";
 const Projects= () => {
   return (
     <>
-    <div className='lg:mt-[20vh] mt-20 flex flex-col gap-5 animate-fade-in'>
+    <div className='lg:mt-[20vh] mt-32 flex flex-col gap-5 animate-fade-in'>
       <div className='flex flex-col justify-center items-center text-center'>
         <h1 className="mt-3 text-4xl font-black">Featured Projects</h1>
         <span className="mt-0.5 max-w-2xl mx-auto text-gray-600 font-semibold text-sm">A showcase of my latest work and experiments.</span>
