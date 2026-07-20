@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { toast, Toaster } from "sonner"
 import styles from "@/components/AnimatedBackground.module.css";
+import { Info } from "lucide-react";
 
 export default function ThemeWrapper({ children }) {
  const { theme } = useTheme(); 
@@ -15,7 +16,10 @@ export default function ThemeWrapper({ children }) {
   useEffect(() => {
     setTimeout(() => {
       if (!mounted.current) {
-        toast.info("Try a different mode for better UI Experiance");
+        toast.info("Try a different mode for better UI Experiance",{
+          icon: <Info/>,
+          className: "custom-toast",
+        });
         mounted.current = true; // ensures it only fires once
       }
     }, 7000);

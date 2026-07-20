@@ -63,7 +63,7 @@ const SkillsCarousel = () => {
       <div className="space-y-6">
 
 
-        <div className="flex gap-5 w-max animate-[scroll_25s_linear_infinite]">
+        <div className="flex gap-5 w-max animate-[scroll_50s_linear_infinite]">
 
           {[...skills,...skills].map((skill,index)=>(
             <SkillCard
@@ -76,7 +76,7 @@ const SkillsCarousel = () => {
 
 
 
-        <div className="flex gap-5 w-max animate-[scrollReverse_25s_linear_infinite]">
+        <div className="flex gap-5 w-max animate-[scrollReverse_50s_linear_infinite]">
 
           {[...skills.reverse(),...skills].map((skill,index)=>(
             <SkillCard

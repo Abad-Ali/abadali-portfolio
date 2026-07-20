@@ -33,34 +33,24 @@ const body = encodeURIComponent(
   if (showIntro) {
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0a0a0a] text-white overflow-hidden">
-  
         <div className="absolute top-0 left-0 w-full h-px bg-white/10"/>
-  
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-[500px] h-[500px] rounded-full border border-white/5 animate-[spin_20s_linear_infinite]"/>
           <div className="absolute w-[350px] h-[350px] rounded-full border border-white/5 animate-[spin_15s_linear_infinite_reverse]"/>
         </div>
-  
         <div className="relative z-10 flex flex-col items-center">
-  
           <motion.div initial={{scale:.7,opacity:0}} animate={{scale:1,opacity:1}} transition={{duration:.8}} className="mb-10">
             <div className="relative">
               <div className="absolute -inset-5 rounded-full border border-white/10 animate-pulse"/>
               <Image src="/logo.png" alt="logo" width={100} height={100} className="rounded-3xl border border-white/20 shadow-2xl"/>
             </div>
           </motion.div>
-  
-  
           <motion.p initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{delay:.3}} className="text-xs tracking-[0.5em] uppercase text-gray-500">
             Portfolio
           </motion.p>
-  
-  
           <motion.h1 initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{delay:.5}} className="mt-4 text-5xl md:text-7xl font-black tracking-tight">
             Abad Ali
           </motion.h1>
-  
-  
           <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:.8}} className="mt-5 text-gray-400 text-lg md:text-xl font-medium">
             <Typewriter
               options={{
@@ -77,14 +67,17 @@ const body = encodeURIComponent(
               }}
             />
           </motion.div>
-  
-  
           <motion.div initial={{width:0}} animate={{width:120}} transition={{delay:1,duration:.8}} className="h-px bg-white/30 mt-10"/>
-  
-  
           <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{delay:1.2}} className="mt-6 max-w-sm text-center text-sm text-gray-500 mx-2">
             Designing and developing modern web applications with clean code and thoughtful experiences.
           </motion.p>
+          <motion.button initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.5, duration: 0.5 }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setShowIntro(false)} className="group relative mx-1.5 mt-10 flex items-center gap-3 px-7 py-3 rounded-full border border-white/20 bg-white/[0.03] backdrop-blur-md text-sm uppercase tracking-[0.25em] text-gray-400 overflow-hidden transition-all duration-500 hover:border-white/40 hover:text-white cursor-pointer">
+            <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"/>
+            <span className="relative z-10">
+              Enter Portfolio
+            </span>
+            <span className=" relative z-10 transition-transform duration-300 group-hover:translate-x-1"> →</span>
+          </motion.button>
   
         </div>
   

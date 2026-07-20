@@ -95,7 +95,7 @@ const ProjectnameClient = ({ project }) => {
 
                 <div className="flex flex-col items-center gap-3">
                   <div>
-                    <h1 className="mt-3 text-3xl sm:text-4xl md:text-6xl font-black text-gray-900 dark:text-white">
+                    <h1 className="mt-3 text-3xl sm:text-4xl md:text-6xl font-black text-gray-900 dark:text-white text-center">
                       {project.name}
                     </h1>
                   </div>

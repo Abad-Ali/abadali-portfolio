@@ -58,15 +58,15 @@ const EducationSection = () => {
 
             <div>
 
-              <h3 className="text-xl font-black">
+              <h3 className="text-lg md:text-xl font-black">
                 Bachelor of Computer Applications (BCA)
               </h3>
 
-              <p className="mt-2 font-semibold text-purple-600">
+              <p className="mt-2 font-semibold text-purple-600 text-sm md:text-base">
                 Sun Institute Of Management And Technology
               </p>
 
-              <p className="text-sm text-gray-600 mt-1 font-semibold">
+              <p className="text-xs md:text-sm text-gray-600 mt-1 font-semibold">
                 Affiliated with MJPRU • 2023 - 2026
               </p>
 

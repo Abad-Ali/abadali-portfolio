@@ -123,7 +123,7 @@ const Navbar = () => {
                 <motion.div key={index} whileHover={{scale:1.08,y:-2}} whileTap={{scale:0.95}} transition={{duration:0.2}}>
                   <Link href={item.href} className={`group relative flex items-center gap-2 px-4 py-2.5 rounded-2xl overflow-hidden transition duration-300 ${isActive ? "bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg" : "bg-white/5 border border-gray-200 dark:border-white/10"}`}>
                     {!isActive && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-pink-600 translate-x-full group-hover:translate-x-0 duration-500"/>
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-pink-600 translate-x-[101%] group-hover:translate-x-0 duration-500"/>
                     )}
                     <span className="relative z-10 group-hover:rotate-12 duration-300">
                       {item.icon}

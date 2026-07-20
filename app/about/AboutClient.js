@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { ArrowRight, Code2, FileText, FolderCode, GithubIcon } from 'lucide-react'
+import { ArrowRight, Code2, FileText, FolderCode, Gauge, GithubIcon, Palette } from 'lucide-react'
 import SkillsCarousel from '@/components/SkillsCarousel'
 import Typewriter from 'typewriter-effect';
 import Link from 'next/link'
@@ -14,11 +14,34 @@ const About = () => {
     <>
       <section className='flex justify-center items-center animate-fade-in'>
         <div className='flex flex-col items-center cursor-pointer lg:mt-[20vh] mt-32'>
-            <motion.div initial={{ opacity: 0, x: -70 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 1, ease: "easeInOut" }} className='flex flex-col md:flex-row justify-center items-center gap-5'>
-                <Avatar className="mt-[3vh] rounded-xl! shadow-lg shadow-black w-45 h-50 border-2 border-black rotate-15 hover:rotate-0  duration-700 hover:scale-110">
-                  <AvatarImage className="w-full h-full object-cover rounded-lg transition-all duration-500 hover:grayscale" src='https://github.com/Abad-Ali.png' alt="Profile_pic"/>
-                  <AvatarFallback>AA</AvatarFallback>
-                </Avatar>
+            <motion.div initial={{ opacity: 0, x: -70 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 1, ease: "easeInOut" }} className='flex flex-col md:flex-row justify-center items-center gap-5 mx-1'>
+                <motion.div initial={{ opacity: 0, scale: 0.9, y: 20 }} whileInView={{ opacity: 1, scale: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} animate={{ y: [0, -6, 0] }} className="relative w-fit group">
+                  <div className="absolute -inset-3 rounded-[28px] bg-gradient-to-br from-violet-600/30 via-fuchsia-500/20 to-cyan-400/30 blur-2xl opacity-60 group-hover:opacity-90 transition-all duration-500" />
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{
+                      duration: 20,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                    className="absolute inset-0 rounded-[28px] p-[1.5px] bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400">
+                    <div className="w-full h-full rounded-[27px] bg-background" />
+                  </motion.div>
+                  <div className="relative p-2 rounded-[28px] bg-background/70 md:backdrop-blur-xl border border-white/10 shadow-2xl">
+                    <Avatar className="w-[130px] h-[150px] rounded-2xl overflow-hidden">
+                      <AvatarImage src="https://github.com/Abad-Ali.png" alt="Profile"className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"/>
+                      <AvatarFallback>AA</AvatarFallback>
+                    </Avatar>
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2">
+                      <div className="flex items-center gap-2 rounded-full bg-background/90 md:backdrop-blur-md border border-white/20 px-3 py-1 shadow-lg">
+                        <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                        <span className="text-[11px] font-medium whitespace-nowrap">
+                          Available for Work
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
     
                 <div className="flex justify-center mt-3 px-2">
                   <div>
@@ -52,7 +75,6 @@ const About = () => {
                             "Next.js Developer",
                             "MERN Stack Developer",
                             "Backend & API Developer",
-                            "Real-Time Application Developer",
                             "React.js Developer",
                             "Software Engineer",
                             "Problem Solver"
@@ -73,31 +95,84 @@ const About = () => {
                 </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 70 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeInOut" }} className='md:ml-[10vw] grid grid-cols-3 justify-center items-center gap-3 md:gap-5 mt-5'>
-              <button className='backdrop-blur-0 md:backdrop-blur-lg bg-black/7 px-2 md:px-7 py-4 rounded-lg cursor-pointer border-[1] border-gray-200 hover:scale-110 duration-300'>
-                  <p className='text-sm text-gray-600 font-sans font-bold'>Specialty</p>
-                  <p className='font-sans font-bold'>Full stack</p>
-              </button>
-    
-              <button className='backdrop-blur-0 md:backdrop-blur-lg bg-black/7 px-2 md:px-7 py-4 rounded-lg cursor-pointer border-[1] border-gray-200 hover:scale-110 duration-300'>
-                  <p className='text-sm text-gray-600 font-sans font-bold'>UI/UX</p>
-                  <p className='font-sans font-bold'>User-friendly</p>
-              </button>
-    
-              <button className='backdrop-blur-0 md:backdrop-blur-lg bg-black/7 px-2 md:px-7 py-4 rounded-lg cursor-pointer border-[1] border-gray-200 hover:scale-110 duration-300'>
-                  <p className='text-sm text-gray-600 font-sans font-bold'>Focus</p>
-                  <p className='font-sans font-bold'>Performance</p>
-              </button>
+            <motion.div initial={{ opacity: 0, x: 70 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="md:ml-[8vw] mt-5 flex flex-wrap justify-center gap-3">
+            
+              {[
+                {
+                  title: "Specialty",
+                  value: "Full Stack",
+                  Icon: Code2,
+                  color: "from-violet-500 to-purple-600",
+                },
+                {
+                  title: "Design",
+                  value: "User Focus",
+                  Icon: Palette,
+                  color: "from-pink-500 to-rose-500",
+                },
+                {
+                  title: "Focus",
+                  value: "Performance",
+                  Icon: Gauge,
+                  color: "from-cyan-500 to-blue-500",
+                },
+              ].map((item, index) => (
+                <motion.div key={index} whileHover={{ y: -5, scale: 1.03 }} transition={{ duration: 0.25 }} className="relative group">
+                  <div className="relative pt-5 px-7 py-3 min-w-[105px] md:min-w-[135px] rounded-xl border border-gray-200 dark:border-white/10 bg-white/5 md:backdrop-blur-xl shadow-md overflow-hidden group-hover:shadow-xl duration-300">
+                    <div className="relative flex items-center gap-2">
+                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center bg-gradient-to-br ${item.color}`}>
+                        <item.Icon className="w-4 h-4 text-white"/>
+                      </div>
+                      <div>
+                        <h3 className="text-xs md:text-sm font-black whitespace-nowrap">
+                          {item.value}
+                        </h3>
+                        <p className="text-[10px] text-gray-500">
+                          {item.title}
+                        </p>
+                      </div>
+                    </div>
+                    <div className={`absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r ${item.color}`}/>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 70 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeInOut" }} className='md:ml-[10vw] flex justify-center items-center gap-5 mt-4'>
-              <Link href='/projects' className='backdrop-blur-0 md:backdrop-blur-lg bg-black/7 px-7 py-3 rounded-lg cursor-pointer border-2 border-purple-700 hover:scale-110 duration-300'>
-                  <p className='font-sans font-bold flex items-center gap-1'><FolderCode className='inline'/><span>Projects</span></p>
-              </Link>
+            <motion.div initial={{ opacity: 0, x: 70 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeInOut" }} className='md:ml-[10vw] flex justify-center items-center gap-3 mt-4'>
+              <motion.div
+                initial={{opacity:0,y:10}}
+                whileInView={{opacity:1,y:0}}
+                transition={{delay:0.7}}>
+                <Link href="/projects" className="group relative flex items-center gap-3 px-2.5 md:px-6 py-3.5 rounded-2xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg cursor-pointer">
+                  <div className="absolute inset-0 bg-black/20 translate-x-full group-hover:translate-x-0 duration-500"></div>
+                  <div className="relative z-10 flex items-center gap-3">
+                  <div className="p-2 rounded-xl bg-white/20">
+                    <Code2 size={20}className="group-hover:rotate-12 duration-300"/>
+                  </div>
+                  <div>
+                    <p className="font-bold">Explore Projects</p>
+                    <p className="text-xs opacity-80">See My Work</p>
+                  </div>
+                  <ArrowRight size={18} className="group-hover:translate-x-2 duration-300"/>
+                  </div>
+                </Link>
+              </motion.div>
 
-              <Link href='https://github.com/Abad-Ali' target='_blank' className='backdrop-blur-0 md:backdrop-blur-lg bg-black/7 px-7 py-3 rounded-lg cursor-pointer border-2 border-purple-700 hover:scale-110 duration-300'>
-                  <p className='font-sans font-bold flex items-center gap-1'><GithubIcon className='inline'/><span>GitHub</span></p>
-              </Link>
+              <motion.div
+                initial={{opacity:0,y:10}}
+                whileInView={{opacity:1,y:0}}
+                transition={{delay:0.8}}>
+                 <Link href='https://github.com/Abad-Ali' target='_blank' className="group flex items-center gap-3 px-2.5 md:px-5 py-3.5 rounded-2xl border border-gray-300 dark:border-white/20 bg-gray-100/60 dark:bg-white/5 backdrop-blur-xl hover:scale-105 transition hover:bg-gradient-to-r from-purple-700 to-pink-600 duration-500">
+                   <div className="p-2 rounded-xl bg-white/20 group-hover:rotate-12 duration-300">
+                     <GithubIcon size={18}/>
+                   </div>
+   
+                   <div className="leading-tight">
+                     <p className="font-bold text-sm">GitHub</p>
+                     <p className="text-[11px] opacity-70">Source Code</p>
+                   </div>
+                 </Link>
+              </motion.div>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeInOut" }} viewport={{ once: true }} className="flex flex-col md:flex-row items-center justify-between gap-6 mt-10 bg-black/5 backdrop-blur-lg px-6 py-7 rounded-3xl border border-gray-200/40 shadow-xl m-2 hover:-translate-y-1 transition-all duration-300">
