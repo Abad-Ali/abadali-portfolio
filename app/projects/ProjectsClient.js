@@ -16,10 +16,10 @@ import { projects } from "./projectsData";
 const Projects= () => {
   return (
     <>
-    <div className='lg:mt-[20vh] mt-32 flex flex-col gap-5 animate-fade-in'>
+    <div className='lg:mt-[20vh] mt-20 flex flex-col gap-5 animate-fade-in'>
       <div className='flex flex-col justify-center items-center text-center'>
-        <h1 className='font-bold text-3xl'>Featured Projects</h1>
-        <span className='text-lg text-gray-600 font-medium'>A showcase of my latest work and experiments.</span>
+        <h1 className="mt-3 text-4xl font-black">Featured Projects</h1>
+        <span className="mt-0.5 max-w-2xl mx-auto text-gray-600 font-semibold text-sm">A showcase of my latest work and experiments.</span>
       </div>
 
       <div className='md:w-full md:h-full'>
@@ -51,27 +51,39 @@ const Projects= () => {
                       </Badge>
                     )}
 
-                    <div className='absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl cursor-pointer'>
-                      <div className='flex flex-col gap-3'>
-                        <div className='flex items-center justify-center mb-0.5'>
-                          <h2 className='bg-gradient-to-r from-purple-700 to-pink-600 bg-clip-text text-transparent text-4xl font-black'>{project.name}</h2>
-                        </div>
-                        <div className='flex flex-col justify-center items-center space-y-5'>
-                           <div className="flex justify-center gap-5 font-semibold">
-                            <Link href={project.url} target="_blank" className="flex items-center gap-2 px-5 py-2 bg-purple-700 text-white rounded-lg cursor-pointer hover:scale-105 duration-300">
-                              <LinkIcon /> Live Demo
-                            </Link>
-       
-                            <Link href={project.github} target="_blank" className="flex items-center gap-2 px-5 py-2 border rounded-lg cursor-pointer hover:scale-105 duration-300 text-white">
-                              <GithubIcon /> GitHub
-                            </Link>
-                          </div>
-       
-                          <div className="flex justify-center">
-                            <Link href='#allProjects' className="flex items-center gap-2 px-5 py-2 border rounded-lg cursor-pointer font-semibold hover:scale-105 duration-300 text-white">
-                              <Eye size={20} strokeWidth={2.5}/>View all projects
-                            </Link>
-                          </div>
+                    <div className="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center p-4 rounded-2xl">
+                      <div className="flex flex-col items-center gap-3">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white text-center">
+                          {project.name}
+                        </h1>
+                        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3">
+                          <Link href={project.url} target="_blank" className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg hover:scale-105 transition">
+                            <div className="p-2 rounded-xl bg-white/20">
+                              <LinkIcon size={18} />
+                            </div>
+                            <div className="leading-tight text-left">
+                              <p className="font-bold text-sm">Live Demo</p>
+                              <p className="text-[11px] opacity-80">Open Website</p>
+                            </div>
+                          </Link>
+                          <Link href={project.github} target="_blank" className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/10 border border-white/30 text-white backdrop-blur-xl hover:scale-105 transition">
+                            <div className="p-2 rounded-xl bg-white/20">
+                              <GithubIcon size={18} />
+                            </div>
+                            <div className="leading-tight text-left">
+                              <p className="font-bold text-sm">GitHub</p>
+                              <p className="text-[11px] opacity-80">Repository</p>
+                            </div>
+                          </Link>
+                          <Link href="#allProjects" className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/10 border border-white/30 text-white backdrop-blur-xl hover:scale-105 transition">
+                            <div className="p-2 rounded-xl bg-white/20">
+                              <Eye size={18} />
+                            </div>
+                            <div className="leading-tight text-left">
+                              <p className="font-bold text-sm">View All</p>
+                              <p className="text-[11px] opacity-80">Projects</p>
+                            </div>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -81,8 +93,7 @@ const Projects= () => {
                     <div className="absolute -right-20 -top-20 w-48 h-48 bg-purple-600/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-700"/>
                     <div className="relative z-10">
                       <div className="flex justify-between items-start gap-3">
-                        <h2
-                          className="text-2xl md:text-3xl font-black bg-gradient-to-r from-purple-700 to-pink-600 bg-clip-text text-transparent truncate transition-all duration-300">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-center">
                           {project.name}
                         </h2>
                         <span

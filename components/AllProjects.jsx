@@ -38,10 +38,10 @@ const AllProjects = () => {
 
 
   return (
-    <section className="min-h-screen md:mt-20 px-4 md:px-10 pb-10">
+    <section className="min-h-screen md:mt-18 px-4 md:px-10 pb-10">
 
 
-      <div className="flex justify-center text-center mb-10">
+      <div className="flex justify-center text-center mb-7">
 
         <div>
 
@@ -59,14 +59,14 @@ const AllProjects = () => {
 
 
 
-      <div className="flex justify-center gap-2 md:gap-8 flex-wrap mb-8">
+      <div className="flex justify-center gap-2 md:gap-8 flex-wrap md:mb-8">
 
         {filters.map((item) => (
 
           <button
             key={item.id}
             onClick={() => setFilter(item.id)}
-            className={`relative flex items-center gap-2 px-3 py-2 rounded-xl font-bold transition ${filter === item.id
+            className={`relative flex items-center gap-2 px-3 py-2 rounded-xl font-bold transition cursor-pointer ${filter === item.id
                 ? "text-purple-600"
                 : "hover:bg-black/5 dark:hover:bg-white/10"
               }`}

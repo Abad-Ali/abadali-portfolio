@@ -150,7 +150,7 @@ const About = () => {
                     <Code2 size={20}className="group-hover:rotate-12 duration-300"/>
                   </div>
                   <div>
-                    <p className="font-bold">Explore Projects</p>
+                    <p className="font-bold text-sm sm:text-base">Explore Projects</p>
                     <p className="text-xs opacity-80">See My Work</p>
                   </div>
                   <ArrowRight size={18} className="group-hover:translate-x-2 duration-300"/>
