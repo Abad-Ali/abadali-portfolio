@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   // 1. Tells Next.js to auto-resolve relative images/paths across all routes
-  metadataBase: new URL("https://vercel.app"),
+  metadataBase: new URL("https://abadali.vercel.app"),
 
   // 2. Fallback title structure for unexpected new sub-routes
   title: {
@@ -26,7 +26,7 @@ export const metadata = {
   description:
     "Portfolio of Abad Ali, a Full-Stack Developer skilled in React, Next.js, Node.js, and the MERN stack. Open to internships, collaborations, and software development opportunities.",
 
-  authors: [{ name: "Abad Ali", url: "https://vercel.app" }],
+  authors: [{ name: "Abad Ali", url: "https://abadali.vercel.app" }],
   creator: "Abad Ali",
 
   // 3. Excellent search crawler instructions for rich visual results
