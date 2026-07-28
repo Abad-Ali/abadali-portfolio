@@ -134,7 +134,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <section className="flex justify-center items-center md:min-h-[70vh] animate-fade-in mt-36 lg:mt-0">
+      <section className="flex justify-center items-center md:min-h-[70vh] animate-fade-in mt-32 lg:mt-0">
         <div className="lg:flex gap-15 m-4">
           <motion.div
             initial={{ opacity: 0, x: -70 }}
