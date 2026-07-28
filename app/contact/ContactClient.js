@@ -129,7 +129,8 @@ import {
   Send,
   Loader2,
   User,
-  MessageCircle
+  MessageCircle,
+  Info
 } from "lucide-react";
 
 const Contact = () => {
@@ -150,10 +151,16 @@ const Contact = () => {
     )
     .then(() => {
       form.current.reset();
-      toast.success("Message sent successfully!");
+      toast.success("Message sent successfully!", {
+        icon: <Info/>,
+        className: 'custom-toast'
+      });
     })
     .catch(() => {
-      toast.error("Failed to send message.");
+      toast.error("Failed to send message.", {
+        icon: <Info/>,
+        className: 'custom-toast'
+      });
     })
     .finally(() => {
       setLoading(false);
@@ -167,7 +174,7 @@ const Contact = () => {
         <div className="text-center">
           <h1 className="mt-3 text-4xl font-black">
             Let's build something
-            <span className="bg-gradient-to-r from-purple-700 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#2563eb] to-[#3b82f6] bg-clip-text text-transparent">
               {" "}great.
             </span>
           </h1>
@@ -185,7 +192,7 @@ const Contact = () => {
               </p>
             </div>
             <div className="mt-6 flex items-center gap-4">
-              <Avatar className="w-16 h-16 rounded-2xl border-2 border-purple-600 shadow-lg">
+              <Avatar className="w-16 h-16 rounded-2xl border-2 border-blue-700 shadow-lg">
                 <AvatarImage src="https://github.com/Abad-Ali.png" className="object-cover"/>
                 <AvatarFallback>
                   AA
@@ -195,7 +202,7 @@ const Contact = () => {
                 <h2 className="text-3xl font-black">
                   Abad Ali
                 </h2>
-                <p className="text-purple-600 font-bold">
+                <p className="text-blue-700 font-bold">
                   Full Stack Developer
                 </p>
               </div>
@@ -228,7 +235,7 @@ const Contact = () => {
                 </span>
               </Link>
             </div>
-            <Link href="/resume.pdf" target="_blank" className="group relative mt-5 flex items-center justify-center gap-3 px-6 py-3 rounded-2xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg cursor-pointer hover:scale-105 transition-all duration-300">
+            <Link href="/resume.pdf" target="_blank" className="group relative mt-5 flex items-center justify-center gap-3 px-6 py-3 rounded-2xl overflow-hidden bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg cursor-pointer hover:scale-105 transition-all duration-300">
               <div className="absolute inset-0 bg-black/20 translate-x-full group-hover:translate-x-0 transition-transform duration-500"/>
               <div className="relative z-10 flex items-center gap-3">
                 <div className="p-2 rounded-xl bg-white/20 group-hover:bg-white/30 duration-300">
@@ -244,8 +251,8 @@ const Contact = () => {
                 </div>
               </div>
             </Link>
-            <div className="mt-5 flex items-center gap-2 text-sm text-gray-600 font-semibold">
-              <MapPin size={18}/>
+            <div className="mt-5 flex items-center gap-2 text-sm text-gray-600 font-semibold items-start">
+              <MapPin size={18} className="text-blue-700"/>
               Shahjahanpur, Uttar Pradesh, India
             </div>
           </motion.div>
@@ -281,8 +288,8 @@ const Contact = () => {
                 </label>
                 <textarea name="message" required placeholder="Write your message..." className="w-full h-36 p-3 rounded-xl bg-white/10 border border-gray-300 outline-none resize-none"/>
               </div>
-              <button type="submit" className="group relative w-full flex items-center bg-gradient-to-r from-purple-700 to-pink-600 justify-center gap-3 px-6 py-3.5 rounded-2xl overflow-hidden  border border-gray-300 shadow-lg cursor-pointer hover:scale-[1.02] transition-all duration-300 text-white">
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-700 opacity-0 group-hover:opacity-100 duration-500"/>
+              <button type="submit" className="group relative w-full flex items-center bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] justify-center gap-3 px-6 py-3.5 rounded-2xl overflow-hidden  border border-gray-300 shadow-lg cursor-pointer hover:scale-[1.02] transition-all duration-300 text-white">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#06b6d4] via-[#3b82f6] to-[#2563eb] opacity-0 group-hover:opacity-100 duration-500"/>
                 <div className="relative z-10 flex items-center gap-3">
                   <div className="p-2 rounded-xl bg-white/20 duration-300 flex justify-center items-center">
                     {loading ? <Loader2 className="animate-spin"/> : <Send className="group-hover:scale-105 duration-300 pr-0.5"/>}
@@ -347,7 +354,7 @@ const Contact = () => {
               </p>
             </div>
           </div>
-          <div className="mt-8 rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-purple-700/10 to-pink-600/10 md:backdrop-blur-xl border border-gray-200/40 shadow-xl text-center">
+          <div className="mt-8 rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-blue-700/10 to-pink-600/10 md:backdrop-blur-xl border border-gray-200/40 shadow-xl text-center">
             <h3 className="text-2xl font-black">
               Have an idea in mind?
             </h3>
@@ -356,7 +363,7 @@ const Contact = () => {
             </p>
       
             <div className="flex justify-center mt-3">
-              <Link href="mailto:abadali1707@gmail.com" className="group relative w-fit flex items-center gap-3 px-6 py-3.5 rounded-2xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg cursor-pointer hover:scale-105 transition-all duration-300">
+              <Link href="mailto:abadali1707@gmail.com" className="group relative w-fit flex items-center gap-3 px-6 py-3.5 rounded-2xl overflow-hidden bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg cursor-pointer hover:scale-105 transition-all duration-300">
                 <div className="absolute inset-0 bg-black/20 translate-x-full group-hover:translate-x-0 duration-500"/>
                 <div className="relative z-10 flex items-center gap-3">
                   <div className="p-2 rounded-xl bg-white/20 group-hover:bg-white/30 duration-300">

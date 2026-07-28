@@ -64,3 +64,36 @@ html {
 
   box-shadow: 0 10px 30px rgba(0,0,0,0.35) !important;
 }
+
+
+/* Hide scrollbar for Firefox */
+.scroll-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+
+/* WebKit Browsers (Chrome, Edge, Safari) */
+.scrollable::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: transparent;
+  margin-top: 20px; /* visually reduce thumb height */
+  margin-bottom: 20px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: #111827;
+  border-radius: 999px;
+  background-clip: content-box;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Firefox & others */
+.scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: #111827 transparent;
+}

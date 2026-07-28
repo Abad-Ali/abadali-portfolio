@@ -57,7 +57,7 @@ const Projects= () => {
                           {project.name}
                         </h1>
                         <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3">
-                          <Link href={project.url} target="_blank" className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg hover:scale-105 transition">
+                          <Link href={project.url} target="_blank" className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg hover:scale-105 transition">
                             <div className="p-2 rounded-xl bg-white/20">
                               <LinkIcon size={18} />
                             </div>
@@ -97,7 +97,7 @@ const Projects= () => {
                           {project.name}
                         </h2>
                         <span
-                          className="shrink-0 px-3 py-1 rounded-full text-xs font-bold bg-purple-600/10  text-purple-600  border border-purple-500/20 transition-all duration-300 group-hover:bg-purple-600/20">
+                          className="shrink-0 px-3 py-1 rounded-full text-xs font-bold bg-purple-600/10  text-blue-700  border border-purple-500/20 transition-all duration-300 group-hover:bg-purple-600/20">
                           Featured
                         </span>
                       </div>
@@ -108,12 +108,12 @@ const Projects= () => {
                     </div>
                     <div
                       className="relative z-10 flex flex-wrap justify-center items-center gap-3 border-t border-black/10 pt-4">
-                      <Link href={`/projects/${project.id}`} className="group relative flex items-center gap-2 px-4 py-3 rounded-xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg cursor-pointer">
+                      <Link href={`/projects/${project.id}`} className="group relative flex items-center gap-2 px-4 py-3.5 rounded-xl overflow-hidden bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg cursor-pointer">
                         <div className="absolute inset-0 bg-black/20 translate-x-full hover:translate-x-0 duration-500"></div>
                       
                         <div className="relative z-10 flex items-center gap-2">
-                          <div className="p-1.5 rounded-lg bg-white/20 duration-300">
-                            <Code2 size={16} className="hover:rotate-12 duration-300" />
+                          <div className="p-2 rounded-lg bg-white/20 duration-300">
+                            <Code2 size={18} className="hover:rotate-12 duration-300" />
                           </div>
                       
                           <div className="leading-tight">
@@ -131,7 +131,7 @@ const Projects= () => {
                           href={project.url}
                           target="_blank"
                           className="group relative flex items-center gap-3 px-5 py-3 rounded-2xl overflow-hidden backdrop-blur-xl bg-white/10 border border-gray-300 shadow-lg cursor-pointer">
-                          <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-pink-600 opacity-0 group-hover:opacity-100 duration-500"></div>                      
+                          <div className="absolute inset-0 bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] opacity-0 group-hover:opacity-100 duration-500"></div>                      
 
                           <div className="relative z-10 flex items-center gap-3">
                             <div className="p-2 rounded-xl bg-white/20 duration-300">
@@ -148,7 +148,7 @@ const Projects= () => {
                         <Link
                           href={project.github}
                           target="_blank"
-                          className="group relative flex items-center gap-3 px-5 py-3 rounded-2xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg cursor-pointer">
+                          className="group relative flex items-center gap-3 px-5 py-3 rounded-2xl overflow-hidden bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg cursor-pointer">
                           <div className="absolute inset-0 bg-black/20 translate-x-full group-hover:translate-x-0 duration-500"></div>                      
 
                           <div className="relative z-10 flex items-center gap-3">
@@ -173,7 +173,7 @@ const Projects= () => {
         </Swiper>
 
         <div className="hidden lg:flex justify-center items-center">
-          <Link href="#allProjects" className="group fixed bottom-0 md:right-5 z-10 flex items-center gap-3 px-5 py-3 rounded-2xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/30">
+          <Link href="#allProjects" className="group fixed bottom-0 md:right-5 z-10 flex items-center gap-3 px-5 py-3 rounded-2xl overflow-hidden bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/30">
             <div className="absolute inset-0 bg-black/20 translate-x-full transition-transform duration-500 group-hover:translate-x-0"/>
             <div className="relative z-10 flex items-center gap-3">
               <div className="p-2 rounded-xl bg-white/20 transition-all duration-300 group-hover:bg-white/30">
@@ -194,13 +194,13 @@ const Projects= () => {
     <section className="relative py-16 px-5 border-t border-white/10 overflow-hidden">
     
       <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center">
-        <h2 className="text-3xl md:text-4xl font-black text-purple-600 dark:text-purple-400">Let's Work Together</h2>
+        <h2 className="text-3xl md:text-4xl font-black text-blue-700">Let's Work Together</h2>
     
         <p className="mt-4 max-w-2xl text-sm md:text-lg text-gray-600 font-semibold">
           Thank you for exploring my portfolio. If you have an idea, project, or opportunity, feel free to reach out and let's create something meaningful.
         </p>
     
-        <Link href="/contact" className="group relative mt-8 flex items-center gap-3 px-5 py-3 rounded-2xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/30">
+        <Link href="/contact" className="group relative mt-8 flex items-center gap-3 px-5 py-3 rounded-2xl overflow-hidden bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30">
           <div className="absolute inset-0 bg-black/20 translate-x-full transition-transform duration-500 group-hover:translate-x-0"/>
     
           <div className="relative z-10 flex items-center gap-3">

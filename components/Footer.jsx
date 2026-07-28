@@ -8,18 +8,18 @@ const Footer = () => {
       <div className="absolute z-10 w-full mx-auto p-8 md:p-10 bg-black border-t border-slate-800 shadow-xl text-gray-300">
         <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2">
-            <h2 className="text-3xl font-black bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-black bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">
               Abad Ali
             </h2>
             <p className="mt-3 max-w-md text-gray-400 font-medium leading-relaxed">
               Full Stack Developer focused on building modern, scalable, and user-friendly web applications using the latest technologies.
             </p>
             <div className="mt-5 flex items-center gap-2 text-sm text-gray-400 font-semibold">
-              <MapPin size={18} className="text-pink-500"/>
+              <MapPin size={18} className="text-blue-700"/>
               Shahjahanpur, Uttar Pradesh, India
             </div>
             <div className="mt-6">
-              <Link href="/projects" className="group relative inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg hover:scale-105 transition duration-300">
+              <Link href="/projects" className="group relative inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl overflow-hidden bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg hover:scale-105 transition duration-300">
                 <div className="absolute inset-0 bg-black/20 translate-x-full group-hover:translate-x-0 duration-500"/>
                 <Code2 className="relative z-10 group-hover:rotate-12 duration-300"/>
                 <span className="relative z-10 font-bold">
@@ -34,19 +34,19 @@ const Footer = () => {
               Quick Links
             </h3>
             <div className="mt-4 flex flex-col gap-3 text-gray-400 font-semibold">
-              <Link href="/" className="hover:text-purple-400 duration-300">
+              <Link href="/" className="hover:text-blue-500 duration-300">
                 Home
               </Link>
-              <Link href="/about" className="hover:text-purple-400 duration-300">
+              <Link href="/about" className="hover:text-blue-500 duration-300">
                 About
               </Link>
-              <Link href="/projects" className="hover:text-purple-400 duration-300">
+              <Link href="/projects" className="hover:text-blue-500 duration-300">
                 Projects
               </Link>
-              <Link href="/resume.pdf" target="_blank" className="hover:text-purple-400 duration-300">
+              <Link href="/resume.pdf" target="_blank" className="hover:text-blue-500 duration-300">
                 Resume
               </Link>
-              <Link href="/contact" className="hover:text-purple-400 duration-300">
+              <Link href="/contact" className="hover:text-blue-500 duration-300">
                 Contact
               </Link>
             </div>

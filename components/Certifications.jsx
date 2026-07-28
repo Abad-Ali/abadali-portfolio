@@ -5,7 +5,7 @@ import Link from "next/link";
 const Certifications = () => {
   const certificates = [
     {
-      name: "Full Stack Developer Bootcamp",
+      name: "Next JS Development",
       img: "/certificates/cert_3.png",
       url: "https://media.geeksforgeeks.org/courses/certificates/09bad33aa77118016af5e3e4cafed79b.pdf",
     },
@@ -15,7 +15,7 @@ const Certifications = () => {
       url: "https://media.geeksforgeeks.org/courses/certificates/5695f74afba6de14837f8a7b7c868e0f.pdf",
     },
     {
-      name: "Next JS Development",
+      name: "Full Stack Developer Bootcamp",
       img: "/certificates/cert_1.png",
       url: "https://media.geeksforgeeks.org/courses/certificates/e004b1511c5fcac7bbc5e4b5354b7e4f.pdf",
     },
@@ -82,7 +82,7 @@ const Certifications = () => {
                 </h3>
 
 
-                <div className="w-12 h-1 mt-3 bg-purple-600 rounded-full"/>
+                <div className="w-12 h-1 mt-3 bg-blue-600 rounded-full"/>
 
 
                 <p className="mt-4 text-sm text-gray-600 font-medium leading-relaxed">
@@ -109,7 +109,7 @@ const Certifications = () => {
                 <Link
                   href={cert.url}
                   target="_blank"
-                  className="inline-flex mt-5 px-5 py-2.5 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition"
+                  className="inline-flex mt-5 px-5 py-2.5 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
                 >
                   View Certificate
                 </Link>

@@ -1,32 +1,74 @@
-import HomeClient from './HomeClient'
+import HomeClient from './HomeClient';
 
 export const metadata = {
-  title: "Abad Ali - Full-Stack Developer Portfolio",
-  description: "Full-Stack Developer portfolio showcasing projects in React, Next.js, Node.js, and MERN stack. Open for internships, jobs, and collaborations.",
-  keywords: "full-stack developer, React, Next.js, Node.js, MERN, JavaScript, portfolio",
-  authors: [{ name: "Abad Ali" }],
+  title: "Abad Ali | Full-Stack Web Developer & MERN Engineer Portfolio",
+  description: "Portfolio of Abad Ali, a Full-Stack Developer specializing in Next.js, React, Node.js, and MongoDB. Explore MERN stack projects, real-time web applications, and developer workflows.",
+  keywords: [
+    "Abad Ali", "Full-Stack Developer", "MERN Stack Engineer", "Next.js Developer", 
+    "React.js Developer", "Node.js Developer", "MongoDB Developer", "Software Engineer Portfolio", 
+    "Web Developer Shahjahanpur", "BCA Developer India", "JavaScript Developer"
+  ],
+  authors: [{ name: "Abad Ali", url: "https://abadali.vercel.app" }],
   creator: "Abad Ali",
+  alternates: {
+    canonical: "https://abadali.vercel.app",
+  },
   openGraph: {
-    title: "Abad Ali - Full-Stack Developer Portfolio",
-    description: "Portfolio of Abad Ali, featuring projects built with React, Next.js, Node.js, and MERN stack.",
+    title: "Abad Ali | Full-Stack Web Developer Portfolio",
+    description: "Explore production-ready MERN stack applications, clean developer workflows, and real-time systems built by Abad Ali.",
     url: "https://abadali.vercel.app",
     siteName: "Abad Ali Portfolio",
-    images: [{ url: "/opengraph-home.png", width: 1200, height: 630, alt: "Portfolio screenshot" }],
-    locale: "en",
+    images: [{ url: "/opengraph-home.png", width: 1200, height: 630, alt: "Abad Ali Full-Stack Developer Portfolio Home Screen" }],
+    locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Abad Ali | Full-Stack Developer",
+    description: "Portfolio of Abad Ali showcasing modern web applications built with Next.js, Express, and MongoDB.",
+    images: ["/opengraph-home.png"],
+  },
   robots: {
-    index: true,              // allow search engines to index the page
-    follow: true,             // allow search engines to follow links
-    nocache: false,           // allow search engines to cache the page
-    noimageindex: false,      // allow images to be indexed
-    nosnippet: false,         // allow search engines to show snippets in search results
-    maxSnippet: -1,           // no limit on snippet length
-    maxImagePreview: "large", // show large image previews in search results
-    maxVideoPreview: -1,      // no limit on video previews
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
 export default function HomePage() {
-  return <HomeClient />
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abad Ali",
+    "url": "https://abadali.vercel.app",
+    "email": "abadali1707@gmail.com",
+    "jobTitle": "Full-Stack Web Developer",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Sun Institute of Management and Technology (MJPRU)"
+    },
+    "knowsAbout": ["Full-Stack Development", "MERN Stack", "Next.js", "React.js", "Node.js", "Express.js", "MongoDB", "JavaScript"],
+    "sameAs": [
+      "https://github.com/Abad-Ali",
+      "https://linkedin.com/in/abadali-dev",
+      "https://instagram.com/abadali_17"
+    ]
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <HomeClient />
+    </>
+  );
 }

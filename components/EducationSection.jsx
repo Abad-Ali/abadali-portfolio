@@ -62,7 +62,7 @@ const EducationSection = () => {
                 Bachelor of Computer Applications (BCA)
               </h3>
 
-              <p className="mt-2 font-semibold text-purple-600 text-sm md:text-base">
+              <p className="mt-2 font-semibold text-blue-700 text-sm md:text-base">
                 Sun Institute Of Management And Technology
               </p>
 

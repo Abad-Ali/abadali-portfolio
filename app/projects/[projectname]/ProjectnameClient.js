@@ -3,15 +3,12 @@
 import React from 'react'
 import Image from "next/image"
 import Link from "next/link"
-import { GithubIcon, LinkIcon, Eye, ArrowLeft } from "lucide-react"
+import { GithubIcon, LinkIcon, Eye, ArrowLeft, Code2, Layers3, Globe } from "lucide-react"
 import { motion } from "framer-motion"
 
 const ProjectnameClient = ({ project }) => {
   return (
     <div className="min-h-screen px-4 sm:px-6 md:px-10 pt-24 pb-12 overflow-hidden mt-10">
-
-      <div className="absolute top-20 right-0 w-96 h-96 bg-purple-600/20 blur-3xl rounded-full"/>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-600/10 blur-3xl rounded-full"/>
 
       <main className="max-w-6xl mx-auto relative z-10">
 
@@ -19,22 +16,22 @@ const ProjectnameClient = ({ project }) => {
 
           <div>
 
-            <span className="text-sm font-semibold text-purple-600 dark:text-purple-400">
+            <span className="text-sm font-semibold text-[#2563eb]">
               Project Showcase
             </span>
 
-            <h1 className="mt-3 text-3xl sm:text-4xl md:text-6xl font-black text-gray-900 dark:text-white">
+            <h1 className="mt-3 text-3xl sm:text-4xl md:text-6xl font-black ">
               {project.name}
             </h1>
 
-            <p className="mt-5 text-white text-base md:text-lg leading-relaxed">
+            <p className="mt-5 text-base md:text-lg leading-relaxed">
               {project.desc}
             </p>
 
 
             <div className="flex flex-wrap gap-3 mt-8">
 
-              <Link href={project.url} target="_blank" className="group relative flex items-center gap-3 px-5 py-3 rounded-2xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg hover:scale-105 transition duration-500">
+              <Link href={project.url} target="_blank" className="group relative flex items-center gap-3 px-5 py-3 rounded-2xl overflow-hidden bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg hover:scale-105 transition duration-500">
 
                 <div className="absolute inset-0 bg-black/20 translate-x-full group-hover:translate-x-0 transition duration-500"/>
 
@@ -56,11 +53,11 @@ const ProjectnameClient = ({ project }) => {
 
               <Link href={project.github} target="_blank" className="group flex items-center gap-3 px-5 py-3 rounded-2xl border border-gray-300 dark:border-white/20 bg-gray-100/60 dark:bg-white/5 backdrop-blur-xl hover:scale-105 transition">
 
-                <div className="p-2 rounded-xl bg-purple-500/20">
+                <div className="p-2 rounded-xl bg-white/20">
                   <GithubIcon size={18}/>
                 </div>
 
-                <div className="leading-tight text-gray-900 dark:text-white">
+                <div className="leading-tight">
                   <p className="font-bold text-sm">GitHub</p>
                   <p className="text-[11px] opacity-70">Source Code</p>
                 </div>
@@ -74,7 +71,7 @@ const ProjectnameClient = ({ project }) => {
 
           <motion.div initial={{opacity:0,scale:.9}} animate={{opacity:1,scale:1}} transition={{duration:.7}} className="relative group">
 
-            <div className="absolute -inset-5 bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-3xl rounded-full"/>
+            <div className="absolute -inset-5 bg-gradient-to-r from-[#2563eb]/20 via-[#3b82f6]/20 to-[#06b6d4]/20 blur-3xl rounded-full"/>
 
             <div className="relative rounded-3xl overflow-hidden bg-gray-100 dark:bg-neutral-900 border border-gray-200 dark:border-white/10 shadow-2xl">
 
@@ -101,7 +98,7 @@ const ProjectnameClient = ({ project }) => {
                   </div>
 
                   <div className='flex flex-col sm:flex-row flex-wrap justify-center gap-3'>
-                  <Link href={project.url} target="_blank" className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg hover:scale-105 transition">
+                  <Link href={project.url} target="_blank" className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg hover:scale-105 transition">
 
                     <div className="p-2 rounded-xl bg-white/20">
                       <LinkIcon size={18}/>
@@ -156,11 +153,11 @@ const ProjectnameClient = ({ project }) => {
 
           <motion.div initial={{opacity:0,x:-40}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration:.6}}>
 
-            <h2 className="text-3xl font-black text-gray-900 dark:text-white">
+            <h2 className="text-3xl font-black">
               About Project
             </h2>
 
-            <p className="mt-5 text-white leading-relaxed">
+            <p className="mt-5 leading-relaxed">
               {project.desc}
             </p>
 
@@ -170,7 +167,7 @@ const ProjectnameClient = ({ project }) => {
 
           <motion.div initial={{opacity:0,x:40}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration:.6}}>
 
-            <h2 className="text-3xl font-black text-gray-900 dark:text-white">
+            <h2 className="text-3xl font-black">
               Technologies
             </h2>
 
@@ -178,7 +175,7 @@ const ProjectnameClient = ({ project }) => {
             <div className="flex flex-wrap gap-3 mt-5">
 
               {project.technologies.map((tech)=>(
-                <span key={tech} className="px-4 py-2 rounded-xl bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-200 font-semibold hover:-translate-y-1 hover:border-purple-500 transition duration-300">
+                <span key={tech} className="px-4 py-2 rounded-xl bg-white/10 border border-gray-200 dark:border-white/10 font-semibold hover:-translate-y-1 hover:border-blue-700 transition duration-300">
                   {tech}
                 </span>
               ))}
@@ -187,15 +184,87 @@ const ProjectnameClient = ({ project }) => {
 
           </motion.div>
 
-
         </div>
 
+        <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .6 }}className="mt-24">
+          <div className="text-center">        
+
+            <h2 className="text-4xl font-black">
+              Project Overview
+            </h2>        
+
+            <p className="mt-4 max-w-2xl mx-auto text-gray-600 font-semibold">
+              A quick look at the framework, technology scale, deployment status, and project availability.
+            </p>        
+
+          </div>        
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">        
+
+            <div className="rounded-3xl border border-white/50 p-8 text-center hover:border-blue-600 transition">        
+
+              <Code2 size={40} className="mx-auto text-blue-600" />        
+
+              <h3 className="mt-5 text-4xl font-black">
+                {project.technologies.length}
+              </h3>        
+
+              <p className="mt-2 text-gray-600">
+                Technologies
+              </p>        
+
+            </div>        
+
+            <div className="rounded-3xl border border-white/50 p-8 text-center hover:border-purple-600 transition">        
+
+              <Layers3 size={40} className="mx-auto text-purple-600" />        
+
+              <h3 className="mt-5 text-2xl font-black">
+                {project.frameWork === "next" ? "Next.js" : "React.js"}
+              </h3>        
+
+              <p className="mt-2 text-gray-600">
+                Framework
+              </p>        
+
+            </div>        
+
+            <div className="rounded-3xl border border-white/50 p-8 text-center hover:border-green-600 transition">        
+
+              <Globe size={40} className="mx-auto text-green-600" />        
+
+              <h3 className="mt-5 text-2xl font-black">
+                Live
+              </h3>        
+
+              <p className="mt-2 text-gray-600">
+                Deployed
+              </p>        
+
+            </div>        
+
+            <div className="rounded-3xl border border-white/50 p-8 text-center hover:border-blue-600 transition">        
+
+              <GithubIcon size={40} className="mx-auto" />        
+
+              <h3 className="mt-5 text-2xl font-black">
+                Open Source
+              </h3>        
+
+              <p className="mt-2 text-gray-600">
+                GitHub
+              </p>        
+
+            </div>        
+
+          </div>        
+
+        </motion.section>
+
+        <motion.div initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:.6}} className="mt-16 flex flex-wrap justify-center gap-4 lg:max-w-lg mx-auto">
 
 
-        <motion.div initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:.6}} className="mt-16 flex flex-wrap justify-center gap-4">
-
-
-          <Link href={project.url} target="_blank" className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg hover:scale-105 transition duration-300">
+          <Link href={project.url} target="_blank" className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg hover:scale-105 transition duration-300">
 
             <div className="p-2 rounded-xl bg-white/20">
               <LinkIcon size={18}/>
@@ -210,13 +279,13 @@ const ProjectnameClient = ({ project }) => {
 
 
 
-          <Link href={project.github} target="_blank" className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-gray-100 dark:bg-white/10 border border-gray-300 dark:border-white/20 hover:scale-105 transition duration-300">
+          <Link href={project.github} target="_blank" className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/10 border border-gray-300 dark:border-white/20 hover:scale-105 transition duration-300">
 
-            <div className="p-2 rounded-xl bg-purple-500/20">
+            <div className="p-2 rounded-xl bg-white/20">
               <GithubIcon size={18}/>
             </div>
 
-            <div className="leading-tight text-gray-900 dark:text-white">
+            <div className="leading-tight">
               <p className="font-bold text-sm">GitHub</p>
               <p className="text-[11px] opacity-70">Repository</p>
             </div>
@@ -227,11 +296,11 @@ const ProjectnameClient = ({ project }) => {
 
           <Link href={`${project.github}/blob/main/README.md`} target="_blank" className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-gray-100 dark:bg-white/10 border border-gray-300 dark:border-white/20 hover:scale-105 transition duration-300">
 
-            <div className="p-2 rounded-xl bg-purple-500/20">
+            <div className="p-2 rounded-xl bg-white/20">
               <Eye size={18}/>
             </div>
 
-            <div className="leading-tight text-gray-900 dark:text-white">
+            <div className="leading-tight">
               <p className="font-bold text-sm">README.md</p>
               <p className="text-[11px] opacity-70">Documentation</p>
             </div>
@@ -242,21 +311,18 @@ const ProjectnameClient = ({ project }) => {
 
           <Link href="/projects#allProjects" className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-gray-100 dark:bg-white/10 border border-gray-300 dark:border-white/20 hover:scale-105 transition duration-300">
 
-            <div className="p-2 rounded-xl bg-purple-500/20">
+            <div className="p-2 rounded-xl bg-white/20">
               <ArrowLeft size={18}/>
             </div>
 
-            <div className="leading-tight text-gray-900 dark:text-white">
+            <div className="leading-tight">
               <p className="font-bold text-sm">Go Back</p>
               <p className="text-[11px] opacity-70">All Projects</p>
             </div>
 
           </Link>
 
-
         </motion.div>
-
-
 
       </main>
 

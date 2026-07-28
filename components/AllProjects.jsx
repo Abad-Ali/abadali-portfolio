@@ -22,7 +22,7 @@ const AllProjects = () => {
     {
       id: "all",
       name: "All Projects",
-      icon: <FolderCode size={24} className="text-purple-600" />
+      icon: <FolderCode size={24} className="text-blue-700" />
     },
     {
       id: "next",
@@ -67,7 +67,7 @@ const AllProjects = () => {
             key={item.id}
             onClick={() => setFilter(item.id)}
             className={`relative flex items-center gap-2 px-3 py-2 rounded-xl font-bold transition cursor-pointer ${filter === item.id
-                ? "text-purple-600"
+                ? "text-blue-700"
                 : "hover:bg-black/5 dark:hover:bg-white/10"
               }`}
           >
@@ -83,7 +83,7 @@ const AllProjects = () => {
 
               <motion.div
                 layoutId="filter"
-                className="absolute left-2 right-2 -bottom-1 h-[3px] rounded-full bg-purple-600"
+                className="absolute left-2 right-2 -bottom-1 h-[3px] rounded-full bg-blue-700"
               />
 
             )}
@@ -109,7 +109,7 @@ const AllProjects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: .6, delay: index * 0.08 }}
-            className="group relative rounded-3xl overflow-hidden bg-white/70 dark:bg-white/5 border border-gray-200 dark:border-white/10 shadow-lg hover:shadow-purple-500/20 transition duration-500"
+            className="group relative rounded-3xl overflow-hidden bg-white/70 dark:bg-white/5 border border-gray-200 dark:border-white/10 shadow-lg hover:shadow-blue-500/20 transition duration-500"
           >
 
 
@@ -128,7 +128,7 @@ const AllProjects = () => {
 
               {index < 3 && (
 
-                <Badge className="absolute top-3 left-3 bg-purple-600 text-white border-0 px-3 py-1">
+                <Badge className="absolute top-3 left-3 bg-blue-600 text-white border-0 px-3 py-1 z-15">
                   New
                 </Badge>
 
@@ -138,7 +138,7 @@ const AllProjects = () => {
 
               <Link
                 href={`/projects/${project.id}`}
-                className="absolute z-12 top-3 right-3 p-2 rounded-xl bg-black/40 backdrop-blur-md text-white hover:bg-purple-600 transition"
+                className="absolute z-12 top-3 right-3 p-2 rounded-xl bg-black/40 backdrop-blur-md text-white hover:bg-blue-600 transition"
               >
 
                 <InfoIcon size={18} />
@@ -165,7 +165,7 @@ const AllProjects = () => {
                     <Link
                       href={project.url}
                       target="_blank"
-                      className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg hover:scale-105 transition"
+                      className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg hover:scale-105 transition"
                     >
 
                       <div className="p-2 rounded-xl bg-white/20">
@@ -243,36 +243,29 @@ const AllProjects = () => {
 
 
 
-              <div className="lg:hidden flex gap-3 mt-4">
+              <div className="lg:hidden flex gap-3 mt-5">
+                <Link href={project.url} target="_blank" className="flex-1 flex items-center justify-center gap-3 rounded-2xl px-4 py-3 bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg shadow-blue-500/20 hover:scale-[1.03] active:scale-95 transition-all duration-300">
+                  <div className="p-2 rounded-xl bg-white/20">
+                    <LinkIcon size={15} />
+                  </div>              
 
+                  <div className="leading-tight text-left">
+                    <p className="font-bold text-xs">Live Demo</p>
+                    <p className="text-[11px] opacity-80">Open Website</p>
+                  </div>
+                </Link>              
 
-                <Link
-                  href={project.url}
-                  target="_blank"
-                  className="flex-1 flex justify-center items-center gap-2 px-3 py-2 rounded-xl bg-gradient-to-r from-purple-700 to-pink-600 text-white text-sm font-bold"
-                >
+                <Link href={project.github} target="_blank" className="flex-1 flex items-center justify-center gap-3 rounded-2xl px-4 py-3 bg-white/80 dark:bg-white/10 border border-gray-200 dark:border-white/20 backdrop-blur-xl text-gray-900 dark:text-white shadow-lg hover:scale-[1.03] active:scale-95 transition-all duration-300">
+                  <div className="p-2 rounded-xl bg-gray-100 dark:bg-white/20">
+                    <GithubIcon size={15} />
+                  </div>              
 
-                  <LinkIcon size={15} />
-                  Demo
-
+                  <div className="leading-tight text-left">
+                    <p className="font-bold text-xs">GitHub</p>
+                    <p className="text-[11px] opacity-70">Source Code</p>
+                  </div>
                 </Link>
-
-
-
-                <Link
-                  href={project.github}
-                  target="_blank"
-                  className="flex-1 flex justify-center items-center gap-2 px-3 py-2 rounded-xl bg-gray-100 dark:bg-white/10 border border-gray-300 dark:border-white/20 text-sm font-bold text-gray-900 dark:text-white"
-                >
-
-                  <GithubIcon size={15} />
-                  Code
-
-                </Link>
-
-
               </div>
-
 
             </div>
 

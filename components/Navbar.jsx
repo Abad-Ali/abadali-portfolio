@@ -99,18 +99,18 @@ const Navbar = () => {
   ];
 
   return (
-    <motion.div initial={{opacity:0,y:-40}} animate={{opacity:1,y:0}} transition={{duration:0.7,ease:"easeOut"}} className="fixed top-3 z-50 w-[90vw] lg:w-4xl backdrop-blur-sm md:backdrop-blur-lg bg-black/5 px-5 py-3 rounded-4xl border-2 border-purple-700 mx-auto left-1/2 -translate-x-1/2">
+    <motion.div initial={{opacity:0,y:-40}} animate={{opacity:1,y:0}} transition={{duration:0.7,ease:"easeOut"}} className="fixed top-3 z-50 w-[90vw] lg:w-4xl backdrop-blur-xs sm:backdrop-blur-sm md:backdrop-blur-lg bg-black/5 px-5 py-3 rounded-4xl border-2 border-[#2563eb] mx-auto left-1/2 -translate-x-1/2">
       <div className="flex items-center justify-between">
         <Link href="/">
           <motion.div whileHover={{scale:1.05}} transition={{duration:0.3}} className="flex items-center gap-2 cursor-pointer">
             <div className="relative w-12 h-12">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-pink-600 p-1 rounded-full animate-[spin_1.5s_linear_infinite]"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] p-1 rounded-full animate-[spin_1.5s_linear_infinite]"></div>
               <Avatar className="w-10 h-10 absolute inset-1 rounded-full z-10">
                 <AvatarImage src="https://github.com/Abad-Ali.png" alt="Profile_pic"/>
                 <AvatarFallback className="font-bold font-serif">AA</AvatarFallback>
               </Avatar>
             </div>
-            <h1 className="font-black text-2xl bg-gradient-to-r from-purple-700 to-pink-600 bg-clip-text text-transparent">
+            <h1 className="font-black text-2xl bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">
               Abad Ali
             </h1>
           </motion.div>
@@ -121,11 +121,11 @@ const Navbar = () => {
               const isActive=currentPath===item.href;
               return (
                 <motion.div key={index} whileHover={{scale:1.08,y:-2}} whileTap={{scale:0.95}} transition={{duration:0.2}}>
-                  <Link href={item.href} className={`group relative flex items-center gap-2 px-4 py-2.5 rounded-2xl overflow-hidden transition duration-300 ${isActive ? "bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg" : "bg-white/5 border border-gray-200 dark:border-white/10"}`}>
+                  <Link href={item.href} className={`group relative flex items-center gap-2 px-4 py-2.5 rounded-2xl overflow-hidden transition duration-300 ${isActive ? "bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg" : "bg-white/5 border border-gray-200 dark:border-white/10"}`}>
                     {!isActive && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-pink-600 translate-x-[101%] group-hover:translate-x-0 duration-500"/>
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] translate-x-[101%] group-hover:translate-x-0 duration-500"/>
                     )}
-                    <span className="relative z-10 group-hover:rotate-12 duration-300">
+                    <span className="relative z-10 group-hover:rotate-12 duration-300 p-1.5 bg-white/10 rounded-lg">
                       {item.icon}
                     </span>
                     <span className="relative z-10 font-semibold">
@@ -136,9 +136,9 @@ const Navbar = () => {
               )
             })
           }
-          <motion.button whileHover={{scale:1.1,rotate:10}} whileTap={{scale:0.9}} onClick={toggleTheme} className="group relative flex items-center justify-center p-3 rounded-2xl overflow-hidden bg-white/5 border border-gray-200 dark:border-white/10 duration-300">
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-pink-600 translate-x-full group-hover:translate-x-0 duration-500"/>
-            <span className="relative z-10">
+          <motion.button whileHover={{scale:1.1,rotate:10}} whileTap={{scale:0.9}} onClick={toggleTheme} className="group relative flex items-center justify-center p-1.5 rounded-2xl overflow-hidden bg-white/5 border border-gray-200 dark:border-white/10 duration-300">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] translate-x-full group-hover:translate-x-0 duration-500"/>
+            <span className="relative z-10 p-1.5 bg-white/10 rounded-lg">
               {
                 theme === "light"
                 ?
@@ -149,7 +149,7 @@ const Navbar = () => {
             </span>
           </motion.button>
         </div>
-        <motion.button whileTap={{scale:0.9,rotate:10}} className="lg:hidden p-2 rounded-2xl bg-white/5 border border-purple-700 text-purple-700" onClick={()=>setOpen(!open)}>
+        <motion.button whileTap={{scale:0.9,rotate:10}} className="lg:hidden p-2 rounded-2xl bg-white/5 border-[2] border-[#2563eb] text-[#2563eb]" onClick={()=>setOpen(!open)}>
           {
             open
             ?
@@ -167,9 +167,9 @@ const Navbar = () => {
                 const isActive=currentPath===item.href;
                 return (
                   <motion.div key={index} initial={{opacity:0,x:-30}} animate={{opacity:1,x:0}} transition={{duration:0.3,delay:index*0.08}}>
-                    <Link href={item.href} onClick={()=>setOpen(false)} className={`group relative flex items-center gap-3 px-4 py-1 rounded-xl overflow-hidden duration-300 ${isActive ? "bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg" : "bg-white/2 border border-white/10"}`}>
+                    <Link href={item.href} onClick={()=>setOpen(false)} className={`group relative flex items-center gap-3 px-4 py-1 rounded-xl overflow-hidden duration-300 ${isActive ? "bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg" : "bg-white/2 border border-white/10"}`}>
                       {!isActive && (
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-pink-600 translate-x-full group-hover:translate-x-0 duration-500"/>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] translate-x-full group-hover:translate-x-0 duration-500"/>
                       )}
                       <span className="relative z-10 group-hover:rotate-12 duration-300 p-1.5 bg-white/10 rounded-lg">
                         {item.icon}
@@ -198,12 +198,12 @@ const Navbar = () => {
                 </span>
               </div>
               <div className="relative w-12 h-6">
-                <div className={`absolute w-12 h-6 rounded-full transition-colors duration-300 ${theme==="light" ? "bg-gray-400/50 border border-gray-400" : "bg-purple-700 border border-purple-400"}`}></div>
+                <div className={`absolute w-12 h-6 rounded-full transition-colors duration-300 ${theme==="light" ? "bg-gray-400/50 border border-gray-400" : "bg-[#2563eb] border border-blue-400"}`}></div>
                 <div className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow flex items-center justify-center transition-transform duration-300 ${theme==="light" ? "translate-x-0.5" : "translate-x-[26px]"}`}>
                   {
                     theme==="light"
                     ?
-                    <Moon className="h-3.5 w-3.5 text-purple-700"/>
+                    <Moon className="h-3.5 w-3.5 text-[#2563eb]"/>
                     :
                     <Sun className="h-3.5 w-3.5 text-yellow-400"/>
                   }

@@ -21,7 +21,7 @@ const AboutPreview = () => {
           transition={{duration:0.8}}
           viewport={{once:true}}
           whileHover={{scale:1.02}}
-          className="rounded-3xl overflow-hidden bg-slate-950 border border-slate-700 shadow-xl"
+          className="rounded-3xl overflow-hidden bg-black/90 border border-slate-700 shadow-xl"
         >
           <div className="flex justify-start gap-3 items-center px-5 py-3 border-b border-slate-700">
             <div className="flex gap-2">
@@ -39,7 +39,7 @@ const AboutPreview = () => {
             whileInView={{opacity:1}}
             transition={{delay:0.5,duration:0.8}}
             viewport={{once:true}}
-            className="h-[300px] p-6 font-mono text-sm text-gray-300 overflow-hidden"
+            className="h-[320px] p-6 font-mono text-sm text-gray-300 overflow-hidden"
           >
             <Typewriter
               options={{
@@ -56,11 +56,11 @@ const AboutPreview = () => {
                 .pauseFor(600)
                 .typeString("<br/><span style='color:#22c55e'>✔ Loading projects...</span>")
                 .pauseFor(600)
-                .typeString("<br/><br/><span style='color:#c084fc'>const</span> developer = {")
+                .typeString("<br/><br/><span style='color:#2563eb'>const</span> developer = {")
                 .pauseFor(300)
                 .typeString("<br/> name: <span style='color:#86efac'>'Abad Ali'</span>,")
-                .pauseFor(300)
-                .typeString("<br/> role: <span style='color:#86efac'>'Full Stack Developer'</span>")
+                .pauseFor(700)
+                .typeString("<br/> role: <span style='color:#86efac'>[Full Stack Web Developer, Frontend Developer, Backend Developer]</span>")
                 .pauseFor(300)
                 .typeString("<br/>}")
                 .pauseFor(500)
@@ -82,7 +82,7 @@ const AboutPreview = () => {
             initial={{opacity:0,y:10}} viewport={{ once: true }} 
             whileInView={{opacity:1,y:0}}
             transition={{delay:0.4}}
-            className="text-purple-600 font-bold"
+            className="text-[#2563eb] font-bold"
           >
             About Me
           </motion.p>
@@ -93,7 +93,7 @@ const AboutPreview = () => {
             className="mt-3 text-3xl font-black"
           >
             Building
-            <span className="bg-gradient-to-r from-purple-700 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#2563eb] to-[#3b82f6] bg-clip-text text-transparent">
               {" "}modern experiences
             </span>
           </motion.h2>
@@ -112,7 +112,7 @@ const AboutPreview = () => {
           >
             <Link
               href="/about"
-              className="group relative inline-flex items-center gap-3 mt-7 px-6 py-3.5 rounded-2xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg cursor-pointer hover:scale-105 transition duration-300"
+              className="group relative inline-flex items-center gap-3 mt-7 px-6 py-3.5 rounded-2xl overflow-hidden bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg cursor-pointer hover:scale-105 transition duration-300"
             >
               <div className="absolute inset-0 bg-black/20 translate-x-full group-hover:translate-x-0 duration-500"/>
               <div className="relative z-10 flex items-center gap-3">

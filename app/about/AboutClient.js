@@ -24,7 +24,7 @@ const About = () => {
                       repeat: Infinity,
                       ease: "linear",
                     }}
-                    className="absolute inset-0 rounded-[28px] p-[1.5px] bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400">
+                    className="absolute inset-0 rounded-[28px] p-[1.5px] bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4]">
                     <div className="w-full h-full rounded-[27px] bg-background" />
                   </motion.div>
                   <div className="relative p-2 rounded-[28px] bg-background/70 md:backdrop-blur-xl border border-white/10 shadow-2xl">
@@ -46,10 +46,10 @@ const About = () => {
                 <div className="flex justify-center mt-3 px-2">
                   <div>
                     <div className='flex justify-between items-center'>
-                      <h1 className='font-black text-3xl bg-gradient-to-r from-purple-700 to-pink-600 bg-clip-text text-transparent'>Abad Ali</h1>
+                      <h1 className='font-black text-3xl bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent'>Abad Ali</h1>
                       <div>
-                        <Link href="/resume.pdf" target="_blank" className="group relative flex items-center gap-2 px-4 py-2.5 rounded-xl overflow-hidden backdrop-blur-xl bg-gradient-to-r from-purple-700 to-pink-600 border border-gray-300 shadow-lg cursor-pointer hover:scale-105 transition-all duration-300">
-                          <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <Link href="/resume.pdf" target="_blank" className="group relative flex items-center gap-2 px-4 py-2.5 rounded-xl overflow-hidden backdrop-blur-xl bg-gradient-to-r from-[#2563eb]/80 via-[#3b82f6]/80 to-[#06b6d4]/80 border border-gray-300 shadow-lg cursor-pointer hover:scale-105 transition-all duration-300">
+                          <div className="absolute inset-0 bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                           <div className="relative z-10 flex items-center gap-2">
                             <div className="p-1.5 rounded-lg bg-white/20 transition-all duration-300">
                               <FileText size={16} className="group-hover:rotate-12 transition-transform duration-300"/>
@@ -66,7 +66,7 @@ const About = () => {
                         </Link>
                       </div>
                     </div>
-                    <h2 className='font-extrabold text-[22px] md:text-2xl bg-gradient-to-r from-purple-700 to-pink-600 bg-clip-text text-transparent'>
+                    <h2 className='font-extrabold text-[22px] md:text-2xl bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent'>
                       <Typewriter
                         options={{
                           strings: [
@@ -83,7 +83,8 @@ const About = () => {
                           loop: true,
                           pauseFor: 700,
                           typeSpeed: 100, 
-                          backSpeed: 50
+                          backSpeed: 50,
+                          cursor: "_",
                         }}
                       />
                     </h2>
@@ -143,7 +144,7 @@ const About = () => {
                 initial={{opacity:0,y:10}}
                 whileInView={{opacity:1,y:0}}
                 transition={{delay:0.7}}>
-                <Link href="/projects" className="group relative flex items-center gap-3 px-2.5 md:px-6 py-3.5 rounded-2xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg cursor-pointer">
+                <Link href="/projects" className="group relative flex items-center gap-3 px-2.5 md:px-6 py-3.5 rounded-2xl overflow-hidden bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg cursor-pointer">
                   <div className="absolute inset-0 bg-black/20 translate-x-full group-hover:translate-x-0 duration-500"></div>
                   <div className="relative z-10 flex items-center gap-3">
                   <div className="p-2 rounded-xl bg-white/20">
@@ -162,7 +163,7 @@ const About = () => {
                 initial={{opacity:0,y:10}}
                 whileInView={{opacity:1,y:0}}
                 transition={{delay:0.8}}>
-                 <Link href='https://github.com/Abad-Ali' target='_blank' className="group flex items-center gap-3 px-2.5 md:px-5 py-3.5 rounded-2xl border border-gray-300 dark:border-white/20 bg-gray-100/60 dark:bg-white/5 backdrop-blur-xl hover:scale-105 transition hover:bg-gradient-to-r from-purple-700 to-pink-600 duration-500">
+                 <Link href='https://github.com/Abad-Ali' target='_blank' className="group flex items-center gap-3 px-2.5 md:px-5 py-3.5 rounded-2xl border border-gray-300 dark:border-white/20 bg-gray-100/60 dark:bg-white/5 backdrop-blur-xl hover:scale-105 transition hover:bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] duration-500">
                    <div className="p-2 rounded-xl bg-white/20 group-hover:rotate-12 duration-300">
                      <GithubIcon size={18}/>
                    </div>
@@ -266,7 +267,7 @@ const About = () => {
               <p className="text-lg font-bold">
                 Always learning, building, and looking for opportunities to create better software experiences.
               </p>        
-              <Link href="/projects" className="group relative inline-flex items-center gap-3 mt-3 px-6 py-3.5 rounded-2xl overflow-hidden bg-gradient-to-r from-purple-700 to-pink-600 text-white shadow-lg cursor-pointer hover:scale-105 transition-all duration-300">
+              <Link href="/projects" className="group relative inline-flex items-center gap-3 mt-3 px-6 py-3.5 rounded-2xl overflow-hidden bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg cursor-pointer hover:scale-105 transition-all duration-300">
                 <div className="absolute inset-0 bg-black/20 translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
                 <div className="relative z-10 flex items-center gap-4">
                   <div className="p-2 rounded-xl bg-white/20">

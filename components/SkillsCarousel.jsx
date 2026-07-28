@@ -35,7 +35,7 @@ const SkillsCarousel = () => {
           {skill.name}
         </p>
 
-        <p className="text-xs text-purple-600 font-semibold">
+        <p className="text-xs text-blue-700 font-semibold">
           {skill.category}
         </p>
       </div>
