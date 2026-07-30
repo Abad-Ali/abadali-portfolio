@@ -2,6 +2,10 @@
 
 <p align="center">
 
+<img src="./app/favicon.ico" alt="PORTFOLIO Logo" width="180"/>
+
+<br/><br/>
+
 <img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=nextdotjs" alt="Next.js 16" />
 
 <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react" alt="React 19" />
@@ -42,6 +46,10 @@ The application is designed with a strong focus on performance, accessibility, u
 <br>
 
 <div align="center">
+
+<img src="./public/screenshots/intro.png" alt="Home Page" width="900" />
+
+<br />
 
 <img src="./public/screenshots/home.png" alt="Home Page" width="900" />
 
