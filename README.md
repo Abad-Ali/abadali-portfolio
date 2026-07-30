@@ -4,15 +4,17 @@
 
 <img src="./app/favicon.ico" alt="PORTFOLIO Logo" width="180"/>
 
-<br/><br/>
+<br/>
 
-<img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=nextdotjs" alt="Next.js 16" />
+<div align='center'>
+  <img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=nextdotjs" alt="Next.js 16" />
 
-<img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react" alt="React 19" />
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react" alt="React 19" />
 
-<img src="https://img.shields.io/badge/TailwindCSS-Used-38BDF8?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/TailwindCSS-Used-38BDF8?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS" />
 
-<img src="https://img.shields.io/badge/Deployed-Vercel-black?style=for-the-badge&logo=vercel" alt="Vercel Deployment" />
+  <img src="https://img.shields.io/badge/Deployed-Vercel-black?style=for-the-badge&logo=vercel" alt="Vercel Deployment" />
+</div>
 
 </p>
 
