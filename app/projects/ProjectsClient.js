@@ -1,6 +1,6 @@
 'use client'
 import { Badge } from '@/components/ui/badge'
-import { ArrowDown, Code2, Eye, GithubIcon, LinkIcon, Mail } from 'lucide-react'
+import { ArrowDown, BookOpen, Eye, GithubIcon, LinkIcon, Mail } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -46,7 +46,7 @@ const Projects= () => {
                     <Image className='rounded-xl md:rounded-2xl border-2 border-black cursor-pointer object-cover' src={project.img} alt='project_img' width={700} height={700} loading="eager"/>
 
                     {index < 3 && (
-                      <Badge className='absolute top-2 left-3 bg-purple-700/10 text-white px-3 py-1 z-10 border-[1] bor-gray-200 animate-bounce'>
+                      <Badge className='absolute top-2 left-3 bg-blue-600 text-white px-3 py-1 z-10 border-[1] bor-gray-200 animate-bounce'>
                         New
                       </Badge>
                     )}
@@ -113,7 +113,7 @@ const Projects= () => {
                       
                         <div className="relative z-10 flex items-center gap-2">
                           <div className="p-2 rounded-lg bg-white/20 duration-300">
-                            <Code2 size={18} className="hover:rotate-12 duration-300" />
+                            <BookOpen size={18} className="hover:rotate-12 duration-300" />
                           </div>
                       
                           <div className="leading-tight">

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FileBadge } from "lucide-react";
 
 const Certifications = () => {
   const certificates = [
@@ -111,7 +112,19 @@ const Certifications = () => {
                   target="_blank"
                   className="inline-flex mt-5 px-5 py-2.5 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
                 >
-                  View Certificate
+                  <div className="relative z-10 flex items-center gap-3">
+                    <div className="p-2 rounded-xl bg-white/20 group-hover:bg-white/30 duration-300">
+                      <FileBadge size={20} className="group-hover:rotate-12 duration-300"/>
+                    </div>
+                    <div className='text-start'>
+                      <p className="font-bold">
+                        View Certificate
+                      </p>
+                      <p className="text-xs opacity-80">
+                        Verify my achievement
+                      </p>
+                    </div>
+                  </div>
                 </Link>
 
 

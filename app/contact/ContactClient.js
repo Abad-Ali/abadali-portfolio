@@ -369,7 +369,7 @@ const Contact = () => {
                   <div className="p-2 rounded-xl bg-white/20 group-hover:bg-white/30 duration-300">
                     <Mail size={20} className="group-hover:rotate-12 duration-300"/>
                   </div>
-                  <div>
+                  <div className='text-start'>
                     <p className="font-bold">
                       Start Conversation
                     </p>

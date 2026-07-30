@@ -273,7 +273,7 @@ const About = () => {
                   <div className="p-2 rounded-xl bg-white/20">
                     <Code2 size={18} className="group-hover:rotate-12 transition-transform duration-300"/>
                   </div>
-                  <div>
+                  <div className='text-start'>
                     <p className="font-bold">Explore Projects</p>
                     <p className="text-xs opacity-80">See My Work</p>
                   </div>

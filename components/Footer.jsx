@@ -19,14 +19,19 @@ const Footer = () => {
               Shahjahanpur, Uttar Pradesh, India
             </div>
             <div className="mt-6">
-              <Link href="/projects" className="group relative inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl overflow-hidden bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg hover:scale-105 transition duration-300">
-                <div className="absolute inset-0 bg-black/20 translate-x-full group-hover:translate-x-0 duration-500"/>
-                <Code2 className="relative z-10 group-hover:rotate-12 duration-300"/>
-                <span className="relative z-10 font-bold">
-                  Explore My Work
-                </span>
-                <ArrowRight className="relative z-10 group-hover:translate-x-2 duration-300"/>
-              </Link>
+              <Link href="/projects" className="group relative inline-flex items-center gap-3 mt-3 px-6 py-3.5 rounded-2xl overflow-hidden bg-gradient-to-r from-[#2563eb] via-[#3b82f6] to-[#06b6d4] text-white shadow-lg cursor-pointer hover:scale-105 transition-all duration-300">
+                <div className="absolute inset-0 bg-black/20 translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                <div className="relative z-10 flex items-center gap-4">
+                  <div className="p-2 rounded-xl bg-white/20">
+                    <Code2 size={18} className="group-hover:rotate-12 transition-transform duration-300"/>
+                  </div>
+                  <div className='text-start'>
+                    <p className="font-bold">Explore Projects</p>
+                    <p className="text-xs opacity-80">See My Work</p>
+                  </div>
+                  <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300"/>
+                </div>
+              </Link>  
             </div>
           </div>
           <div>

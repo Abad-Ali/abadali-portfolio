@@ -4,7 +4,7 @@ import React, { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { FolderCode, GithubIcon, InfoIcon, LinkIcon } from "lucide-react"
+import { BookOpen, FolderCode, GithubIcon, InfoIcon, LinkIcon } from "lucide-react"
 import { SiNextdotjs, SiReact } from "react-icons/si"
 import { Badge } from "@/components/ui/badge"
 import { projects } from "../app/projects/projectsData"
@@ -141,7 +141,7 @@ const AllProjects = () => {
                 className="absolute z-12 top-3 right-3 p-2 rounded-xl bg-black/40 backdrop-blur-md text-white hover:bg-blue-600 transition"
               >
 
-                <InfoIcon size={18} />
+                <BookOpen size={18} />
 
               </Link>
 
