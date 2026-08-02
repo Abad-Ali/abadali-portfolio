@@ -13,21 +13,21 @@ export default function FloatingContact() {
   const buttons = [
     {
       name: "Email",
-      icon: <Mail size={21} />,
+      icon: <Mail className="group-hover:text-red-400 group-hover:rotate-12 duration-300" size={21} />,
       href: `mailto:abadali1707@gmail.com?subject=${subject}&body=${body}`,
-      hoverClasses: "hover:border-red-500 hover:text-red-400 hover:bg-red-500/10"
+      hoverClasses: "hover:border-red-500 hover:text-red-400 group"
     },
     {
       name: "GitHub",
-      icon: <Github size={21} />,
+      icon: <Github className="group-hover:text-purple-400 group-hover:rotate-12 duration-300" size={21} />,
       href: "https://github.com/Abad-Ali",
-      hoverClasses: "hover:border-white hover:text-white hover:bg-white/10"
+      hoverClasses: "hover:border-purple-500 hover:text-white group"
     },
     {
       name: "Concierge Chat",
-      icon: <Sparkles size={21} />,
+      icon: <Sparkles className="group-hover:text-blue-400 group-hover:rotate-12 duration-300" size={21} />,
       chat: true,
-      hoverClasses: "hover:border-blue-500 hover:text-blue-400 hover:bg-blue-500/10"
+      hoverClasses: "hover:border-blue-500 hover:text-blue-400 hover:bg-blue-500/10 group"
     }
   ]
 

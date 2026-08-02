@@ -46,7 +46,7 @@ const Projects= () => {
                     <Image className='rounded-xl md:rounded-2xl border-2 border-black cursor-pointer object-cover' src={project.img} alt='project_img' width={700} height={700} loading="eager"/>
 
                     {index < 3 && (
-                      <Badge className='absolute top-2 left-3 bg-blue-600 text-white px-3 py-1 z-10 border-[1] bor-gray-200 animate-bounce'>
+                      <Badge className='absolute top-2 left-3 bg-blue-600 text-white px-3 py-1 z-10 animate-bounce'>
                         New
                       </Badge>
                     )}

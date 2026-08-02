@@ -340,7 +340,7 @@ export default function Home() {
             {/* RIGHT SIDE */}
             <motion.div initial={{ opacity: 0, x: 60 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="relative flex items-center justify-center min-h-[420px]">
               {/* Main Glow */}
-              <motion.div animate={{ scale: [1, 1.15, 1], opacity: [0.25, 0.4, 0.25] }} transition={{ duration: 5, repeat: Infinity }} className="absolute w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 blur-[100px]"/>
+              <motion.div animate={{ scale: [1, 1.15, 1], opacity: [0.25, 0.4, 0.25] }} transition={{ duration: 5, repeat: Infinity }} className="absolute w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 md:blur-[100px] hidden md:inline"/>
               {/* Orbit Circle 1 */}
               <motion.div animate={{ rotate: 360 }} transition={{ duration: 25, repeat: Infinity, ease: "linear" }} className="absolute w-[300px] h-[300px] md:w-[420px] md:h-[420px] rounded-full border border-white/10"/>
               {/* Orbit Circle 2 */}

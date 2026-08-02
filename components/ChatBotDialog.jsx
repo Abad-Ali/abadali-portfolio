@@ -2,6 +2,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Bot, Circle, Send, Sparkles, X } from "lucide-react";
+import axios from "axios";
+import ReactMarkdown from "react-markdown";
 
 const ChatBotDialog = ({ open, setOpen }) => {
   const [messages, setMessages] = useState([
@@ -151,30 +153,60 @@ const ChatBotDialog = ({ open, setOpen }) => {
     );
   };
 
-  const sendMessage = (shortcut) => {
+  const sendMessage = async (shortcut) => {
     const userText = shortcut || input;
+
     if (!userText.trim()) return;
+
     setMessages((prev) => [
       ...prev,
-      { role: "user", text: userText, time: getDateTime() },
+      {
+        role: "user",
+        text: userText,
+        time: getDateTime(),
+      },
     ]);
+
     setInput("");
     setSending(true);
+
     setThinking("Thinking");
     let count = 0;
     const thinkingInterval = setInterval(() => {
       count++;
       setThinking("Thinking" + ".".repeat(count % 4));
     }, 400);
-    setTimeout(() => {
-      clearInterval(thinkingInterval);
+
+    try {
+      const { data } = await axios.post("https://abadali.vercel.app/api/chat", {
+        message: userText,
+      });
+
       setMessages((prev) => [
         ...prev,
-        { role: "bot", text: reply(userText), time: getDateTime() },
+        {
+          role: "bot",
+          text: data.reply,
+          time: getDateTime(),
+        },
       ]);
+    } catch (error) {
+      console.log("Gemini failed. Using fallback.");
+
+      // Use your existing local chatbot
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "bot",
+          text: reply(userText),
+          time: getDateTime(),
+        },
+      ]);
+    } finally {
+      clearInterval(thinkingInterval);
       setThinking("");
       setSending(false);
-    }, 1200);
+    }
   };
 
   const shortcuts = ["Projects", "Resume", "Contact", "Skills"];
@@ -204,8 +236,16 @@ const ChatBotDialog = ({ open, setOpen }) => {
                 <div>
                   <h2 className="font-bold text-white">Abad's Concierge</h2>
                   <div className="flex items-center gap-1">
-                    <motion.div animate={{scale: [1, 2, 1], opacity: [1, 0, 1],}} transition={{duration: 1.8,repeat: Infinity,ease: "easeOut",}} className="absolute w-2 h-2 rounded-full bg-green-500"/>
-                    <div className="relative w-2 h-2 rounded-full bg-green-500 shadow-[0_0_12px_#22c55e]"/>
+                    <motion.div
+                      animate={{ scale: [1, 2, 1], opacity: [1, 0, 1] }}
+                      transition={{
+                        duration: 1.8,
+                        repeat: Infinity,
+                        ease: "easeOut",
+                      }}
+                      className="absolute w-2 h-2 rounded-full bg-green-500"
+                    />
+                    <div className="relative w-2 h-2 rounded-full bg-green-500 shadow-[0_0_12px_#22c55e]" />
                     <p className="text-xs text-gray-400">Available</p>
                   </div>
                 </div>
@@ -229,9 +269,31 @@ const ChatBotDialog = ({ open, setOpen }) => {
                   className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div
-                    className={`max-w-[85%] rounded-t-3xl px-4 py-3 text-sm ${msg.role === "user" ? "bg-blue-600 text-white rounded-l-3xl" : "bg-white/10 text-gray-200 rounded-r-3xl"}`}
-                  >
-                    <div>{msg.text}</div>
+                    className={`max-w-[85%] break-words whitespace-pre-wrap rounded-t-3xl px-4 py-3 text-sm ${msg.role === "user"
+                        ? "bg-blue-600 text-white rounded-l-3xl"
+                        : "bg-white/10 text-gray-200 rounded-r-3xl"
+                      }`}>
+
+                    {typeof msg.text === "string" ? (
+                      <ReactMarkdown
+                        components={{
+                          a: ({ href, children }) => (
+                            <a
+                              href={href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-400 underline hover:text-blue-300"
+                            >
+                              {children}
+                            </a>
+                          ),
+                        }}
+                      >
+                        {msg.text}
+                      </ReactMarkdown>
+                    ) : (
+                      msg.text
+                    )}
                     <p className="mt-2 text-[10px] opacity-60">{msg.time}</p>
                   </div>
                 </div>
@@ -245,7 +307,7 @@ const ChatBotDialog = ({ open, setOpen }) => {
               )}
               <div ref={chatEndRef} />
             </div>
-            <div className="px-3 pb-2 flex gap-2 overflow-x-auto scrollbar-hide py-2">
+            <div className="px-3 pb-2 flex justify-center gap-2 overflow-x-auto scrollbar-hide py-2">
               {shortcuts.map((item) => (
                 <motion.button
                   key={item}
