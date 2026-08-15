@@ -27,7 +27,7 @@ export default function FloatingContact() {
       name: "Concierge Chat",
       icon: <Sparkles className="group-hover:text-blue-400 group-hover:rotate-12 duration-300" size={21} />,
       chat: true,
-      hoverClasses: "hover:border-blue-500 hover:text-blue-400 hover:bg-blue-500/10 group"
+      hoverClasses: "hover:border-blue-500 hover:text-blue-400 group"
     }
   ]
 

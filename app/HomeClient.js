@@ -463,7 +463,7 @@ export default function Home() {
             <motion.div
               key={item.title}
               whileHover={{ y: -8 }}
-              className="rounded-2xl p-6 bg-black/5 border border-white/10 text-center hover:border-blue-700 duration-300"
+              className="rounded-2xl p-6 bg-white/5 border border-white text-center hover:border-blue-700 duration-300"
             >
               <div className="text-blue-700 mb-3">{item.icon}</div>
 
@@ -516,7 +516,7 @@ export default function Home() {
             <motion.div
               key={skill}
               whileHover={{ scale: 1.08 }}
-              className="px-4 py-2 rounded-xl bg-black/5 border border-white/10 hover:border-blue-700 hover:-translate-y-1 duration-300  transition text-sm"
+              className="px-4 py-2 rounded-xl bg-white/5 border border-white hover:border-blue-700 hover:-translate-y-1 duration-300  transition text-sm"
             >
               {skill}
             </motion.div>
